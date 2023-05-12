@@ -16,7 +16,7 @@ class users
      */
     public function handle(Request $request, Closure $next)
     {
-        if(\App\Models\users::where('username', $request -> session() -> get('username')) -> exists()){
+        if(\App\Models\users::where('username', $request -> session() -> get('username')) -> where('st', 'active') -> exists()){
             return $next($request);
         }else{
             return redirect(route('users_accounts_web'));
