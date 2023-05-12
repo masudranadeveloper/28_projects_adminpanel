@@ -348,8 +348,8 @@ class ComposerStaticInitb5e995f620cfdc3daf4a64010d7bb532
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -528,6 +528,15 @@ class ComposerStaticInitb5e995f620cfdc3daf4a64010d7bb532
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\backend\\admin\\admin_backend_accounts_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/backend/admin/admin_backend_accounts_controller.php',
+        'App\\Http\\Controllers\\backend\\admin\\admin_backend_settings_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/backend/admin/admin_backend_settings_controller.php',
+        'App\\Http\\Controllers\\backend\\admin\\admin_backend_users_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/backend/admin/admin_backend_users_controller.php',
+        'App\\Http\\Controllers\\backend\\users\\users_backend_account_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/backend/users/users_backend_account_controller.php',
+        'App\\Http\\Controllers\\frontend\\admin\\admin_frontend_accounts_Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/frontend/admin/admin_frontend_accounts_Controller.php',
+        'App\\Http\\Controllers\\frontend\\admin\\admin_frontend_setting_Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/frontend/admin/admin_frontend_setting_Controller.php',
+        'App\\Http\\Controllers\\frontend\\admin\\admin_frontend_users_Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/frontend/admin/admin_frontend_users_Controller.php',
+        'App\\Http\\Controllers\\frontend\\users\\users_frontend_accounts_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/frontend/users/users_frontend_accounts_controller.php',
+        'App\\Http\\Controllers\\frontend\\users\\users_frontend_deshbord_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/frontend/users/users_frontend_deshbord_controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -538,7 +547,10 @@ class ComposerStaticInitb5e995f620cfdc3daf4a64010d7bb532
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Middleware\\admin' => __DIR__ . '/../..' . '/app/Http/Middleware/admin.php',
+        'App\\Http\\Middleware\\users' => __DIR__ . '/../..' . '/app/Http/Middleware/users.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Models\\users' => __DIR__ . '/../..' . '/app/Models/users.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
