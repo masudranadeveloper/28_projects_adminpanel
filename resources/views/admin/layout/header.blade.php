@@ -45,14 +45,14 @@
                     </li>
 
                     {{-- settings  --}}
-                    <li class="nav-item {{Route::is('admin_settings_web') ? 'active' : ''}}" data-toggle="tooltip" data-placement="right" title="Settings">
-                        <a class="nav-link nav-link-collapse {{Route::is('admin_settings_web') ? 'active' : ''}}" data-toggle="collapse" href="#collapseSettings" data-parent="#exampleAccordion">
+                    <li class="nav-item {{Route::is('settings.*') ? 'active' : ''}}" data-toggle="tooltip" data-placement="right" title="Settings">
+                        <a class="nav-link nav-link-collapse {{Route::is('settings.*') ? 'active' : ''}}" data-toggle="collapse" href="#collapseSettings" data-parent="#exampleAccordion">
                             <i class="fa-solid fa-gamepad"></i>
                             <span class="nav-link-text">Settings</span>
                           </a>
-                        <ul class="sidenav-second-level {{Route::is('admin_settings_web') ? 'show' : 'collapse'}}" id="collapseSettings">
+                        <ul class="sidenav-second-level {{Route::is('settings.*') ? 'show' : 'collapse'}}" id="collapseSettings">
                             <li>
-                                <a style="{{Route::is('admin_settings_web') ? 'color: green !important' : ''}}" href="{{route('admin_settings_web')}}">Settings</a></a>
+                                <a style="{{Route::is('settings.admin_products_web') ? 'color: green !important' : ''}}" href="{{route('settings.admin_products_web')}}">PRODUCTS</a></a>
                             </li>
                         </ul>
                     </li>

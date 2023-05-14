@@ -11,6 +11,7 @@ class admin_frontend_users_Controller extends Controller
     //admin_users_all_controller
     public function admin_users_all_controller()
     {
+        users::where('expired', '<', time()) -> where('role', '0') -> delete();
         $userData = users::orderBy('id', 'DESC') -> where('st', 'active') -> where('role', '0') -> paginate(10);
         return view('admin.pages.users.all') -> with(compact('userData'));
     }
@@ -32,6 +33,6 @@ class admin_frontend_users_Controller extends Controller
     public function admin_users_update_controller($id)
     {
         $data = users::where('id', $id) -> first();
-        return view('admin.pages.users.update') -> with(compact('data'));
+        return view('admin.pages.users.update') -> with(compact('data', 'id'));
     }
 }

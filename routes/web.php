@@ -33,7 +33,6 @@ Route::prefix('admin')->group(function () {
     Route::get('accounts', [admin_frontend_accounts_Controller::class, 'admin_accounts_controller']) -> name('admin_accounts_web');
 
     Route::middleware(['admin'])->group(function () {
-        Route::get('settings', [admin_frontend_setting_Controller::class, 'admin_settings_controller']) -> name('admin_settings_web');
 
         // users
         Route::prefix('users')->group(function () {
@@ -42,5 +41,11 @@ Route::prefix('admin')->group(function () {
             Route::get('all', [admin_frontend_users_Controller::class, 'admin_users_all_controller']) -> name('users.admin_all_web');
             Route::get('ban', [admin_frontend_users_Controller::class, 'admin_users_ban_controller']) -> name('users.admin_ban_web');
         });
+
+        Route::prefix('settings')->group(function () {
+            Route::get('products', [admin_frontend_setting_Controller::class, 'admin_settings_products_controller']) -> name('settings.admin_products_web');
+            Route::get('products_add', [admin_frontend_setting_Controller::class, 'admin_settings_products_add_controller']) -> name('settings.admin_products_add_web');
+        });
+
     });
 });

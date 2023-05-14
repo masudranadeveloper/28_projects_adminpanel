@@ -1,0 +1,211 @@
+body{
+	font: normal 13px/20px Arial, Helvetica, sans-serif; word-wrap:break-word;
+	color: #eee;
+	background: #353535;
+}
+#countdown{
+	width: 90%;
+	height: 112px;
+	text-align: center;
+	background: #222;
+	background-image: -webkit-linear-gradient(top, #222, #333, #333, #222);
+	background-image:    -moz-linear-gradient(top, #222, #333, #333, #222);
+	background-image:     -ms-linear-gradient(top, #222, #333, #333, #222);
+	background-image:      -o-linear-gradient(top, #222, #333, #333, #222);
+	border: 1px solid #111;
+	border-radius: 5px;
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
+	margin: auto;
+	padding: 24px 0;
+	position: relative;
+  top: 0; bottom: 0; left: 0; right: 0;
+}
+
+#countdown:before{
+	content:"";
+	width: 8px;
+	height: 65px;
+	background: #444;
+	background-image: -webkit-linear-gradient(top, #555, #444, #444, #555);
+	background-image:    -moz-linear-gradient(top, #555, #444, #444, #555);
+	background-image:     -ms-linear-gradient(top, #555, #444, #444, #555);
+	background-image:      -o-linear-gradient(top, #555, #444, #444, #555);
+	border: 1px solid #111;
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+	display: block;
+	position: absolute;
+	top: 48px; left: -10px;
+}
+
+#countdown:after{
+	content:"";
+	width: 8px;
+	height: 65px;
+	background: #444;
+	background-image: -webkit-linear-gradient(top, #555, #444, #444, #555);
+	background-image:    -moz-linear-gradient(top, #555, #444, #444, #555);
+	background-image:     -ms-linear-gradient(top, #555, #444, #444, #555);
+	background-image:      -o-linear-gradient(top, #555, #444, #444, #555);
+	border: 1px solid #111;
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+	display: block;
+	position: absolute;
+	top: 48px; right: -10px;
+}
+
+#countdown #tiles{
+	position: relative;
+	z-index: 1;
+}
+
+#countdown #tiles > span{
+    width: 54px;
+	font: bold 48px 'Droid Sans', Arial, sans-serif;
+	text-align: center;
+	color: #111;
+	background-color: #ddd;
+	background-image: -webkit-linear-gradient(top, #bbb, #eee);
+	background-image:    -moz-linear-gradient(top, #bbb, #eee);
+	background-image:     -ms-linear-gradient(top, #bbb, #eee);
+	background-image:      -o-linear-gradient(top, #bbb, #eee);
+	border-top: 1px solid #fff;
+	border-radius: 3px;
+	box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.7);
+	margin: 0 7px;
+	display: inline-block;
+	position: relative;
+}
+
+#countdown #tiles > span:before{
+	content:"";
+	width: 100%;
+	height: 13px;
+	background: #111;
+	display: block;
+	padding: 0 3px;
+	position: absolute;
+	top: 41%; left: -3px;
+	z-index: -1;
+}
+
+#countdown #tiles > span:after{
+	content:"";
+	width: 100%;
+	height: 1px;
+	background: #eee;
+	border-top: 1px solid #333;
+	display: block;
+	position: absolute;
+	top: 48%; left: 0;
+}
+
+#countdown .labels {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+    gap: 1.6rem;
+}
+
+#countdown .labels li{
+	font: bold 15px 'Droid Sans', Arial, sans-serif;
+	color: #f47321;
+	text-shadow: 1px 1px 0px #000;
+	text-align: center;
+	text-transform: uppercase;
+	display: inline-block;
+}
+// checked box
+.checkbox {
+    display: none;
+  }
+
+  .switch {
+    align-items: center;
+    background-color: gray;
+    border-radius: 500px;
+    cursor: pointer;
+    display: flex;
+    height: 40px;
+    justify-content: space-between;
+    padding: 0 10px;
+    position: relative;
+    user-select: none;
+    width: 80px;
+  }
+
+  .checkbox:checked ~ .switch {
+    background-color: blue;
+  }
+
+  .checkbox:not(:checked) ~ .switch {
+    background-color: gray;
+  }
+
+  .switch__left,
+  .switch__right {
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .checkbox:checked ~ .switch .switch__left {
+    visibility: hidden;
+  }
+
+  .checkbox:not(:checked) ~ .switch .switch__right {
+    visibility: hidden;
+  }
+
+  .switch__circle {
+    height: 40px;
+    padding: 5px;
+    position: absolute;
+    transition: all 0.1s linear;
+    width: 40px;
+  }
+
+  .checkbox:checked ~ .switch .switch__circle {
+    left: 0;
+    right: calc(100% - 40px);
+  }
+
+  .checkbox:not(:checked) ~ .switch .switch__circle {
+    left: calc(100% - 40px);
+    right: 0;
+  }
+
+  .switch__circle-inner {
+    background-color: white;
+    border-radius: 50%;
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.row{
+    .col-4{
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-direction: column;
+        gap: 0.4rem;
+        img{
+            width: 4rem;
+            height: 4rem;
+            border-radius: 7px;
+        }
+        h2.title{
+            font-size: 0.8rem;
+            color: black;
+            text-align: center;
+        }
+    }
+}
