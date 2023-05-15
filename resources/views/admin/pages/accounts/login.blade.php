@@ -134,8 +134,6 @@ button{
 </head>
 <body>
     <div class="background">
-        <div class="shape"></div>
-        <div class="shape"></div>
     </div>
     <form action="{{ route('admin_login_api') }}" method="post">
         <h3>Admin Login</h3>

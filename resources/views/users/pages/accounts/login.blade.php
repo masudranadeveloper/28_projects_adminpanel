@@ -135,8 +135,6 @@ button{
 </head>
 <body>
     <div class="background">
-        <div class="shape"></div>
-        <div class="shape"></div>
     </div>
     <form action="" method="post" id="submit_form">
         <h3>Users Login</h3>
