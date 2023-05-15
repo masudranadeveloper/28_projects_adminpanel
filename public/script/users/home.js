@@ -10,7 +10,7 @@ const ajax_function = () => {
     })
 }
 ajax_function();
-var countdown = document.getElementById("tiles");
+var countdown = document.getElementById("dyahmss");
 
 function getCountdown(time){
     setInterval(() => {
@@ -21,7 +21,7 @@ function getCountdown(time){
         let hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
         let seconds = Math.floor((difference % (1000 * 60)) / 1000);
-        countdown.innerHTML = "<span>" + days + "</span><span>" + hours + "</span><span>" + minutes + "</span><span>" + seconds + "</span>";
+        countdown.innerHTML = "<span>" + days + "days </span><span>" + hours + "hours </span><span>" + minutes + "minutes </span><span>" + seconds + "seconds left</span>";
     }, 1000);
 }
 

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->text("name") -> default('products name');
             $table->text("pic") -> default('products.png');
+            $table->text("links") -> default('links');
             $table->text("content18") -> default('no');
             $table->timestamps();
         });

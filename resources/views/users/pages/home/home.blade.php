@@ -32,10 +32,10 @@
             <div class="card-body">
                 <div class="row">
                     @foreach ($products as $item)
-                        <div class="col-4 mt-3">
+                        <a href="{{ $item['links'] }}" class="col-4 mt-3">
                             <img class="images" src="{{ asset('images/products/'.$item['pic']) }}" alt="">
                             <h2 class="title">{{ $item['name'] }}</h2>
-                        </div>
+                        </a>
                     @endforeach
                 </div>
             </div>
@@ -43,21 +43,11 @@
     </div>
 
     <div class="container">
-        <div id="countdown">
-            <div id='tiles'>
-                <span>00</span>
-                <span>00</span>
-                <span>00</span>
-                <span>00</span>
-            </div>
-            <div class="labels">
-                <li>Days</li>
-                <li>Hours</li>
-                <li>Mins</li>
-                <li>Secs</li>
-            </div>
+        <div class="expired">
+            <h6 class="title">Expired in : <span id="dyahmss"></span></h2>
         </div>
     </div>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>

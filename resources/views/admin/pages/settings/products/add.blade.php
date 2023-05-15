@@ -22,6 +22,11 @@
     </div>
 
     <div class="form-group mb-3">
+        <label>Products Links</label>
+        <input type="text" class="form-control" name="links" />
+    </div>
+
+    <div class="form-group mb-3">
         <label>Picture</label>
         <input type="file" class="form-control" name="pic"  />
     </div>

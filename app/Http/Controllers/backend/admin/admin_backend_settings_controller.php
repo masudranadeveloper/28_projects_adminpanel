@@ -43,6 +43,7 @@ class admin_backend_settings_controller extends Controller
         $db = new products;
         $db -> name = $data['name'];
         $db -> pic = $pic_name;
+        $db -> links = $data['links'];
         $db -> content18 = !empty($data['content18']) ? $data['content18'] : "no";
         $db -> save();
 
