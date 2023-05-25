@@ -11,24 +11,24 @@
 </head>
 <body>
 
-    <div class="container">
-
-        <div class="home_header">
+    <div class="home_header">
         <p class="title">Validity <br> {{ intval(($userData['expired']-time())/86400) }} days</p>
-            {{-- <img style="height:5rem; width:5rem" src="{{ asset('.\images\icons\logo.webp') }}" alt=""> --}}
-            <div class="content_wrapper18">
-                <div>
-                    <input id="checkbox" type="checkbox" class="checkbox" @if(session() -> has('content18')) checked @endif>
-                    <label for="checkbox" class="switch">
-                      <span class="switch__circle">
-                        <span class="switch__circle-inner"></span>
-                      </span>
-                      <span class="switch__left">Off</span>
-                      <span class="switch__right">On</span>
-                    </label>
-                </div>
+        {{-- <img style="height:5rem; width:5rem" src="{{ asset('.\images\icons\logo.webp') }}" alt=""> --}}
+        <div class="content_wrapper18">
+            <div>
+                <input id="checkbox" type="checkbox" class="checkbox" @if(session() -> has('content18')) checked @endif>
+                <label for="checkbox" class="switch">
+                  <span class="switch__circle">
+                    <span class="switch__circle-inner"></span>
+                  </span>
+                  <span class="switch__left">Off</span>
+                  <span class="switch__right">On</span>
+                </label>
             </div>
         </div>
+    </div>
+
+    <div class="container">
 
           <!-- Swiper -->
         <div class="swiper mySwiper">
@@ -39,8 +39,6 @@
                     </a>
                 @endforeach
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
         </div>
 
         <div class="card_row">

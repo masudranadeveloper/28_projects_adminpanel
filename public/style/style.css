@@ -19,7 +19,7 @@
 }
 
 .checkbox:checked ~ .switch {
-  background-color: blue;
+  background-color: red;
 }
 
 .checkbox:not(:checked) ~ .switch {
@@ -79,7 +79,7 @@
   justify-content: space-between;
   padding: 0.5rem;
   padding-bottom: 10rem;
-  background: black;
+  background: #1A237E;
   border-radius: 0% 0% 50% 50%;
 }
 .home_header p {
