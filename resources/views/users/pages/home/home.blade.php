@@ -14,8 +14,8 @@
     <div class="container">
 
         <div class="home_header">
-        <p class="title">Validity {{ intval(($userData['expired']-time())/86400) }} days</p>
-            <img style="height:5rem; width:5rem" src="{{ asset('.\images\icons\logo.webp') }}" alt="">
+        <p class="title">Validity <br> {{ intval(($userData['expired']-time())/86400) }} days</p>
+            {{-- <img style="height:5rem; width:5rem" src="{{ asset('.\images\icons\logo.webp') }}" alt=""> --}}
             <div class="content_wrapper18">
                 <div>
                     <input id="checkbox" type="checkbox" class="checkbox" @if(session() -> has('content18')) checked @endif>
@@ -35,7 +35,7 @@
             <div class="swiper-wrapper">
                 @foreach ($slider as $item)
                     <a href="{{ $item['links'] }}" class="swiper-slide">
-                        <img style="height:40vh" src="{{ asset('images/slider/'.$item['img']) }}" alt="">
+                        <img style="height:30vh" src="{{ asset('images/slider/'.$item['img']) }}" alt="">
                     </a>
                 @endforeach
             </div>
@@ -43,35 +43,17 @@
             <div class="swiper-button-prev"></div>
         </div>
 
-        <div class="card">
-            {{-- <div class="card-header">
-                <a href="{{ route('users_users_logout_api') }}" class="btn btn-danger">Logout</a>
-
-                <div class="content_wrapper18">
-                    <div>
-                        <input id="checkbox" type="checkbox" class="checkbox" @if(session() -> has('content18')) checked @endif>
-                        <label for="checkbox" class="switch">
-                          <span class="switch__circle">
-                            <span class="switch__circle-inner"></span>
-                          </span>
-                          <span class="switch__left">Off</span>
-                          <span class="switch__right">On</span>
-                        </label>
-                    </div>
-                </div>
-
-            </div> --}}
-            <div class="card-body">
-                <div class="row">
-                    @foreach ($products as $item)
-                        <a href="{{ $item['links'] }}" class="col-4 mt-3">
-                            <img class="images" src="{{ asset('images/products/'.$item['pic']) }}" alt="">
-                            <h2 class="title">{{ $item['name'] }}</h2>
-                        </a>
-                    @endforeach
-                </div>
+        <div class="card_row">
+            <div class="row">
+                @foreach ($products as $item)
+                    <a href="{{ $item['links'] }}" class="col-4 mt-3">
+                        <img class="images" src="{{ asset('images/products/'.$item['pic']) }}" alt="">
+                        <h2 class="title">{{ $item['name'] }}</h2>
+                    </a>
+                @endforeach
             </div>
         </div>
+
     </div>
 
 
