@@ -130,7 +130,15 @@ button{
 .social i{
   margin-right: 4px;
 }
+a.contact {
+    position: fixed;
+    left: 0;
+    bottom: 2rem;
 
+}
+a.contact img{
+        height: 4rem;
+    }
     </style>
 </head>
 <body>
@@ -145,6 +153,7 @@ button{
         <button id="sub_btn">Log In</button>
     </form>
 
+    <a class="contact" href="{{ $data['links'] }}"><img src="{{ asset('images\icons\contact.png') }}" alt=""></a>
 
     <script>
         const urls = {
@@ -152,5 +161,6 @@ button{
         }
     </script>
     <script src="{{ asset('script\users\accounts.js') }}"></script>
+
 </body>
 </html>
