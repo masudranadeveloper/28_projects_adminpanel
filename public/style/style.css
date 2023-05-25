@@ -107,7 +107,7 @@
 
 .swiper.mySwiper.swiper-initialized.swiper-horizontal.swiper-backface-hidden {
   transform: translateY(-9rem);
-  width: 90%;
+  width: 100%;
   border-radius: 15px;
   border: 1px groove black;
 }
@@ -115,7 +115,7 @@
 .card_row {
   border-radius: 15px;
   transform: translateY(-8rem);
-  width: 90%;
+  width: 100%;
   display: block;
   margin: auto;
   border: 1px solid #ddd;
