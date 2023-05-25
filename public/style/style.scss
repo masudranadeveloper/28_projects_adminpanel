@@ -109,7 +109,7 @@
     transform: translateY(-9rem);
     width: 90%;
     border-radius: 15px;
-    border: 2px groove black;
+    border: 1px groove black;
 }
 .card_row {
     border-radius: 15px;
@@ -117,6 +117,7 @@
     width: 90%;
     display: block;
     margin: auto;
+    border: 1px solid #ddd;
 }
 
 // swipper
