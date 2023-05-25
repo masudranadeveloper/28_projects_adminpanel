@@ -137,12 +137,10 @@ button{
     <div class="background">
     </div>
     <form action="" method="post" id="submit_form">
-        <h3>Users Login</h3>
 
         <p style="color: red;text-align:center;margin-bottom:2rem; margin-top:1rem" id="error"></p>
-
-        <label for="username">Username</label>
-        <input type="text" placeholder="Username..." name="username" id="login_username">
+        <p for="username" style="text-align: center;">Username</p>
+        <input type="text" placeholder="Username..." name="Inter your username..." id="login_username">
 
         <button id="sub_btn">Log In</button>
     </form>

@@ -53,7 +53,14 @@ use App\Http\Controllers\backend\admin\admin_backend_settings_controller;
     Route::prefix('settings')->group(function () {
         Route::get('content18/{id}', [admin_backend_settings_controller::class, 'admin_settings_content18_controller']) -> name('admin_settings_content18_api');
         Route::post('products_add', [admin_backend_settings_controller::class, 'admin_settings_products_add_controller']) -> name('admin_settings_products_add_api');
+        Route::post('products_update_img/{id}', [admin_backend_settings_controller::class, 'admin_settings_products_update_img_controller']) -> name('admin_settings_products_update_img_api');
+        Route::post('products_update_content/{id}', [admin_backend_settings_controller::class, 'admin_settings_products_update_content_controller']) -> name('admin_settings_products_update_content_api');
         Route::get('products_delete/{id}', [admin_backend_settings_controller::class, 'admin_settings_products_delete_controller']) -> name('admin_settings_products_delete_api');
+        // slider
+        Route::post('add_slider', [admin_backend_settings_controller::class, 'admin_settings_add_slider_controller']) -> name('admin_settings_add_slider_api');
+        Route::GET('delete_slider/{id}', [admin_backend_settings_controller::class, 'admin_settings_delete_slider_controller']) -> name('admin_settings_delete_slider_api');
+        // contact page
+        Route::POST('contact_links_add', [admin_backend_settings_controller::class, 'admin_settings_contact_links_add_controller']) -> name('admin_settings_contact_links_add_api');
     });
 
 });

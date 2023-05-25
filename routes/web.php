@@ -45,6 +45,10 @@ Route::prefix('admin')->group(function () {
         Route::prefix('settings')->group(function () {
             Route::get('products', [admin_frontend_setting_Controller::class, 'admin_settings_products_controller']) -> name('settings.admin_products_web');
             Route::get('products_add', [admin_frontend_setting_Controller::class, 'admin_settings_products_add_controller']) -> name('settings.admin_products_add_web');
+            Route::get('products_update/{id}', [admin_frontend_setting_Controller::class, 'admin_settings_products_update_controller']) -> name('settings.admin_products_update_web');
+            Route::get('contact', [admin_frontend_setting_Controller::class, 'admin_settings_contact_controller']) -> name('settings.admin_contact_web');
+            Route::get('slider', [admin_frontend_setting_Controller::class, 'admin_settings_slider_controller']) -> name('settings.admin_slider_web');
+            Route::get('slider_add', [admin_frontend_setting_Controller::class, 'admin_settings_slider_add_controller']) -> name('settings.admin_slider_add_web');
         });
 
     });

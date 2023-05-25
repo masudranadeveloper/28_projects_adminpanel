@@ -5,14 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.0/css/bootstrap.min.css" integrity="sha512-NZ19NrT58XPK5sXqXnnvtf9T5kLXSzGQlVZL9taZWeTBtXoN3xIfTdxbkQh6QSoJfJgpojRqMfhyqBAAEeiXcA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ asset('style\style.css') }}">
 </head>
 <body>
 
     <div class="container">
+
+        <div class="home_header">
+        <p class="title">Validity {{ intval(($userData['expired']-time())/86400) }} days</p>
+            <img style="height:5rem; width:5rem" src="{{ asset('.\images\icons\logo.webp') }}" alt="">
+            <div class="content_wrapper18">
+                <div>
+                    <input id="checkbox" type="checkbox" class="checkbox" @if(session() -> has('content18')) checked @endif>
+                    <label for="checkbox" class="switch">
+                      <span class="switch__circle">
+                        <span class="switch__circle-inner"></span>
+                      </span>
+                      <span class="switch__left">Off</span>
+                      <span class="switch__right">On</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+          <!-- Swiper -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                @foreach ($slider as $item)
+                    <a href="{{ $item['links'] }}" class="swiper-slide">
+                        <img style="height:40vh" src="{{ asset('images/slider/'.$item['img']) }}" alt="">
+                    </a>
+                @endforeach
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+
         <div class="card">
-            <div class="card-header">
+            {{-- <div class="card-header">
                 <a href="{{ route('users_users_logout_api') }}" class="btn btn-danger">Logout</a>
 
                 <div class="content_wrapper18">
@@ -28,7 +60,7 @@
                     </div>
                 </div>
 
-            </div>
+            </div> --}}
             <div class="card-body">
                 <div class="row">
                     @foreach ($products as $item)
@@ -42,13 +74,9 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="expired">
-            <h6 class="title">Expired in : <span id="dyahmss"></span></h2>
-        </div>
-    </div>
 
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         const urls = {

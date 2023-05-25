@@ -5,6 +5,8 @@ namespace App\Http\Controllers\frontend\users;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\products;
+use App\Models\slider;
+use App\Models\users;
 
 class users_frontend_deshbord_controller extends Controller
 {
@@ -16,6 +18,9 @@ class users_frontend_deshbord_controller extends Controller
         }else{
             $products = products::orderBy('id', 'DESC') -> where('content18', 'no') -> get();
         }
-        return view('users.pages.home.home') -> with(compact('products'));
+        $slider = slider::orderBy('id', 'DESC') -> get();
+        $userData = users::where('username', $request -> session() -> get('username')) -> first();
+
+        return view('users.pages.home.home') -> with(compact('products', 'slider', 'userData'));
     }
 }

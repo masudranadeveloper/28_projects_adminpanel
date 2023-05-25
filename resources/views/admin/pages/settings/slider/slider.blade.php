@@ -17,7 +17,7 @@
 <div class="card mb-3">
     <div class="card-header">
         <i class="fa fa-table"></i> DATA TABLE
-        <a href="{{ route('settings.admin_products_add_web') }}" class="btn btn-success">ADD NEW</a>
+        <a href="{{ route('settings.admin_slider_add_web') }}" class="btn btn-success">ADD NEW</a>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -26,20 +26,18 @@
                     <tr>
                         <th>ID</th>
                         <th>Img</th>
-                        <th>name</th>
-                        <th>18+ content</th>
+                        <th>Links</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($products as $item)
+                    @foreach ($slider as $item)
                         <tr>
                             <td>{{ $item['id'] }}</td>
-                            <td><img class="images" src="{{ asset('images/products/'.$item['pic']) }}" alt=""></td>
-                            <td>{{ $item['name'] }}</td>
-                            <td><a href="{{ route('admin_settings_content18_api', ['id' => $item['id']]) }}" class="btn @if($item['content18'] == "no") btn-danger @else btn-success @endif}">{{ $item['content18'] }}</a></td>
+                            <td><img class="images" src="{{ asset('images/slider/'.$item['img']) }}" alt=""></td>
+                            <td>{{ $item['links'] }}</td>
                             <td>
-                                <a href="{{ route('admin_settings_products_delete_api', ['id' => $item['id']]) }}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+                                <a href="{{ route('admin_settings_delete_slider_api', ['id' => $item['id']]) }}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
                             </td>
                         </tr>
                     @endforeach
@@ -49,7 +47,7 @@
     </div>
 
     <div class="data" style="margin-top:2rem; margin-bottom:2rem">
-        {{$products -> onEachSide(1) -> links()}}
+        {{$slider -> onEachSide(1) -> links()}}
     </div>
 
 </div>
