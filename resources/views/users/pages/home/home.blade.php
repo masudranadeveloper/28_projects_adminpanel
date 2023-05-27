@@ -41,7 +41,7 @@
             </div>
         </div>
 
-        <div style="background: white" class="card_row">
+        <div style="background: white; border:1px solid #dddd;" class="card_row">
             <div style="background: white" class="row">
                 @foreach ($products as $item)
                     <a href="{{ $item['links'] }}" class="col-4 mt-3">
