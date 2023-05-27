@@ -41,8 +41,8 @@
             </div>
         </div>
 
-        <div class="card_row">
-            <div class="row">
+        <div style="background: white" class="card_row">
+            <div style="background: white" class="row">
                 @foreach ($products as $item)
                     <a href="{{ $item['links'] }}" class="col-4 mt-3">
                         <img class="images" src="{{ asset('images/products/'.$item['pic']) }}" alt="">
@@ -54,9 +54,9 @@
 
     </div>
 
-    <div class="container">
+    {{-- <div class="container">
         <p>{{ $_SERVER['HTTP_USER_AGENT'] }}</p>
-    </div>
+    </div> --}}
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
