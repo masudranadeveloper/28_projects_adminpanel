@@ -132,9 +132,10 @@ button{
 }
 a.contact {
     position: fixed;
-    left: 0;
-    bottom: 2rem;
-
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%, -50%);
+    text-decoration:none;
 }
 a.contact img{
         height: 4rem;
@@ -153,7 +154,8 @@ a.contact img{
         <button id="sub_btn">Log In</button>
     </form>
 
-    <a class="contact" href="{{ $data['links'] }}"><img src="{{ asset('images\icons\contact.png') }}" alt=""></a>
+
+    <a class="contact" href="{{ $data['links'] }}"><img src="{{ asset('images\icons\contact_us.webp') }}" alt=""></a>
 
     <script>
         const urls = {

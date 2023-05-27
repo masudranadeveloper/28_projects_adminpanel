@@ -42,7 +42,7 @@
         </div>
 
         <div style="background: white; border:1px solid #dddd;" class="card_row">
-            <div style="background: white" class="row">
+            <div class="row">
                 @foreach ($products as $item)
                     <a href="{{ $item['links'] }}" class="col-4 mt-3">
                         <img class="images" src="{{ asset('images/products/'.$item['pic']) }}" alt="">
