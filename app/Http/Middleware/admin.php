@@ -16,7 +16,7 @@ class admin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(\App\Models\users::where('username', $request -> session() -> get('username')) -> where('role', "1") -> exists()){
+        if(\App\Models\users::where('username', $request -> session() -> get('username')) -> where('role', "1") -> orWhere('role', "2") -> exists() && !$request -> session() -> get('username')){
             return $next($request);
         }else{
             return redirect(route('admin_accounts_web'));

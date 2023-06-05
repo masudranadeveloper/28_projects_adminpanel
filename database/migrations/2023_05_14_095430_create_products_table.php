@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->text("name") -> default('products name');
-            $table->text("pic") -> default('products.png');
-            $table->text("links") -> default('links');
-            $table->text("content18") -> default('no');
+            $table->string("name") -> default('products name');
+            $table->string("pic") -> default('products.png');
+            $table->string("links") -> default('links');
+            $table->string("content18") -> default('no');
             $table->timestamps();
         });
     }

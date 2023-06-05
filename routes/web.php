@@ -10,6 +10,7 @@ use App\Http\Controllers\frontend\users\users_frontend_deshbord_controller;
 use App\Http\Controllers\frontend\admin\admin_frontend_accounts_Controller;
 use App\Http\Controllers\frontend\admin\admin_frontend_users_Controller;
 use App\Http\Controllers\frontend\admin\admin_frontend_setting_Controller;
+use App\Http\Controllers\frontend\admin\admin_frontend_reseller_controller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,6 +41,14 @@ Route::prefix('admin')->group(function () {
             Route::get('add', [admin_frontend_users_Controller::class, 'admin_users_add_controller']) -> name('users.admin_add_web');
             Route::get('all', [admin_frontend_users_Controller::class, 'admin_users_all_controller']) -> name('users.admin_all_web');
             Route::get('ban', [admin_frontend_users_Controller::class, 'admin_users_ban_controller']) -> name('users.admin_ban_web');
+        });
+
+        // reseller
+        Route::prefix('reseller')->group(function () {
+            Route::get('update/{id}', [admin_frontend_reseller_controller::class, 'admin_reseller_update_controller']) -> name('reseller.admin_update_web');
+            Route::get('add', [admin_frontend_reseller_controller::class, 'admin_reseller_add_controller']) -> name('reseller.admin_add_web');
+            Route::get('all', [admin_frontend_reseller_controller::class, 'admin_reseller_all_controller']) -> name('reseller.admin_all_web');
+            Route::get('ban', [admin_frontend_reseller_controller::class, 'admin_reseller_ban_controller']) -> name('reseller.admin_ban_web');
         });
 
         Route::prefix('settings')->group(function () {

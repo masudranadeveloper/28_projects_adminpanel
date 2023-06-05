@@ -44,24 +44,42 @@
                         </ul>
                     </li>
 
-                    {{-- settings  --}}
-                    <li class="nav-item {{Route::is('settings.*') ? 'active' : ''}}" data-toggle="tooltip" data-placement="right" title="Settings">
-                        <a class="nav-link nav-link-collapse {{Route::is('settings.*') ? 'active' : ''}}" data-toggle="collapse" href="#collapseSettings" data-parent="#exampleAccordion">
-                            <i class="fa-solid fa-gamepad"></i>
-                            <span class="nav-link-text">Settings</span>
-                          </a>
-                        <ul class="sidenav-second-level {{Route::is('settings.*') ? 'show' : 'collapse'}}" id="collapseSettings">
-                            <li>
-                                <a style="{{Route::is('settings.admin_slider_web') ? 'color: green !important' : ''}}" href="{{route('settings.admin_slider_web')}}">SLIDER</a></a>
-                            </li>
-                            <li>
-                                <a style="{{Route::is('settings.admin_products_web') ? 'color: green !important' : ''}}" href="{{route('settings.admin_products_web')}}">PRODUCTS</a></a>
-                            </li>
-                            <li>
-                                <a style="{{Route::is('settings.admin_contact_web') ? 'color: green !important' : ''}}" href="{{route('settings.admin_contact_web')}}">CONTACT</a></a>
-                            </li>
-                        </ul>
-                    </li>
+                    @if (admin_data(session() -> get('username'))['role'] == "1")
+                        {{-- all resellers  --}}
+                        <li class="nav-item {{Route::is('reseller.*') ? 'active' : ''}}" data-toggle="tooltip" data-placement="right" title="AllUsers">
+                            <a class="nav-link nav-link-collapse {{Route::is('reseller.*') ? 'active' : ''}}" data-toggle="collapse" href="#collapseAllReseller" data-parent="#exampleAccordion">
+                                <i class="fa-solid fa-gamepad"></i>
+                                <span class="nav-link-text">RESELLER</span>
+                            </a>
+                            <ul class="sidenav-second-level {{Route::is('reseller.*') ? 'show' : 'collapse'}}" id="collapseAllReseller">
+                                <li>
+                                    <a style="{{Route::is('reseller.admin_all_web') ? 'color: green !important' : ''}}" href="{{route('reseller.admin_all_web')}}">ALL</a></a>
+                                </li>
+                                <li>
+                                    <a style="{{Route::is('reseller.admin_ban_web') ? 'color: green !important' : ''}}" href="{{route('reseller.admin_ban_web')}}">BAN</a></a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        {{-- settings  --}}
+                        <li class="nav-item {{Route::is('settings.*') ? 'active' : ''}}" data-toggle="tooltip" data-placement="right" title="Settings">
+                            <a class="nav-link nav-link-collapse {{Route::is('settings.*') ? 'active' : ''}}" data-toggle="collapse" href="#collapseSettings" data-parent="#exampleAccordion">
+                                <i class="fa-solid fa-gamepad"></i>
+                                <span class="nav-link-text">Settings</span>
+                            </a>
+                            <ul class="sidenav-second-level {{Route::is('settings.*') ? 'show' : 'collapse'}}" id="collapseSettings">
+                                <li>
+                                    <a style="{{Route::is('settings.admin_slider_web') ? 'color: green !important' : ''}}" href="{{route('settings.admin_slider_web')}}">SLIDER</a></a>
+                                </li>
+                                <li>
+                                    <a style="{{Route::is('settings.admin_products_web') ? 'color: green !important' : ''}}" href="{{route('settings.admin_products_web')}}">PRODUCTS</a></a>
+                                </li>
+                                <li>
+                                    <a style="{{Route::is('settings.admin_contact_web') ? 'color: green !important' : ''}}" href="{{route('settings.admin_contact_web')}}">CONTACT</a></a>
+                                </li>
+                            </ul>
+                        </li>
+                    @endif
 
                 </ul>
 

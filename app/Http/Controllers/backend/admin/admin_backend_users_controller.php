@@ -12,10 +12,16 @@ class admin_backend_users_controller extends Controller
     public function admin_users_add_controller(Request $req)
     {
         $data = $req -> all();
+
+        if(users::where('username', $data['username']) -> exists()){
+            return back() -> with('msg', 'Sorry! this username is already exists!');
+        }
+
         $db = new users;
         $db -> username = $data['username'];
         $db -> password = $data['password'];
         $db -> login_time = $data['login_time'];
+        $db -> creator_role = admin_data($req -> session() -> get('username'))['id'];
         $db -> expired = time()+($data['expired']*86400);
         $db -> save();
         return back() -> with('msg', 'Your data successfully added!');

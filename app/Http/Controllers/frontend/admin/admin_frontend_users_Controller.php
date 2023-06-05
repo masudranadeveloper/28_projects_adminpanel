@@ -9,10 +9,11 @@ use App\Models\users;
 class admin_frontend_users_Controller extends Controller
 {
     //admin_users_all_controller
-    public function admin_users_all_controller()
+    public function admin_users_all_controller(Request $request)
     {
         users::where('expired', '<', time()) -> where('role', '0') -> delete();
-        $userData = users::orderBy('id', 'DESC') -> where('st', 'active') -> where('role', '0') -> paginate(10);
+        $adminData = users::where("username", $request -> session() -> get('username'))-> first();
+        $userData = users::orderBy('id', 'DESC') -> where('st', 'active') -> where('role', '0') -> where('creator_role', $adminData['id']) -> paginate(10);
         return view('admin.pages.users.all') -> with(compact('userData'));
     }
 

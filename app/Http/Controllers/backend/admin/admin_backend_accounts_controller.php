@@ -12,7 +12,7 @@ class admin_backend_accounts_controller extends Controller
     public function admin_login_controller(Request $req)
     {
         $data = $req -> all();
-        if(users::where('username', $data['username']) -> where('password', $data['password']) -> where('role', 1) -> exists()){
+        if(users::where('username', $data['username']) -> where('password', $data['password']) -> where('role', 1) -> orWhere('role', 2) -> exists()){
             $req -> session() -> put('username', $data['username']);
             return redirect(route('users.admin_all_web'));
         }

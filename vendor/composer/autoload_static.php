@@ -34,6 +34,7 @@ class ComposerStaticInitb5e995f620cfdc3daf4a64010d7bb532
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         '320163ac6b93aebe3dc25b60a0533d56' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/helpers.php',
+        '1aff2f8abd60e952b4bdd52d4f05a132' => __DIR__ . '/../..' . '/app/helper.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -532,7 +533,9 @@ class ComposerStaticInitb5e995f620cfdc3daf4a64010d7bb532
         'App\\Http\\Controllers\\backend\\admin\\admin_backend_settings_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/backend/admin/admin_backend_settings_controller.php',
         'App\\Http\\Controllers\\backend\\admin\\admin_backend_users_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/backend/admin/admin_backend_users_controller.php',
         'App\\Http\\Controllers\\backend\\users\\users_backend_account_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/backend/users/users_backend_account_controller.php',
+        'App\\Http\\Controllers\\backend\\users\\users_backend_home_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/backend/users/users_backend_home_controller.php',
         'App\\Http\\Controllers\\frontend\\admin\\admin_frontend_accounts_Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/frontend/admin/admin_frontend_accounts_Controller.php',
+        'App\\Http\\Controllers\\frontend\\admin\\admin_frontend_reseller_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/frontend/admin/admin_frontend_reseller_controller.php',
         'App\\Http\\Controllers\\frontend\\admin\\admin_frontend_setting_Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/frontend/admin/admin_frontend_setting_Controller.php',
         'App\\Http\\Controllers\\frontend\\admin\\admin_frontend_users_Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/frontend/admin/admin_frontend_users_Controller.php',
         'App\\Http\\Controllers\\frontend\\users\\users_frontend_accounts_controller' => __DIR__ . '/../..' . '/app/Http/Controllers/frontend/users/users_frontend_accounts_controller.php',
@@ -549,7 +552,9 @@ class ComposerStaticInitb5e995f620cfdc3daf4a64010d7bb532
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Http\\Middleware\\admin' => __DIR__ . '/../..' . '/app/Http/Middleware/admin.php',
         'App\\Http\\Middleware\\users' => __DIR__ . '/../..' . '/app/Http/Middleware/users.php',
-        'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Models\\management' => __DIR__ . '/../..' . '/app/Models/management.php',
+        'App\\Models\\products' => __DIR__ . '/../..' . '/app/Models/products.php',
+        'App\\Models\\slider' => __DIR__ . '/../..' . '/app/Models/slider.php',
         'App\\Models\\users' => __DIR__ . '/../..' . '/app/Models/users.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

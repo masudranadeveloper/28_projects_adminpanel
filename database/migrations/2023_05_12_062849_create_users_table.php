@@ -17,10 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string('username');
             $table->string('password');
-            $table->integer('login_time') -> default(1);
-            $table->integer('expired') -> default(1);
-            $table->integer('role') -> default(0);
-            $table->integer('uniqeID') -> default(0);
+            $table->string('login_time') -> default(1);
+            $table->string('expired') -> default(1);
+            $table->string('creator_role') -> default(1);
+            $table->string('role') -> default(0);
+            $table->string('uniqeID') -> default(0);
             $table->string('st') -> default("active");
             $table->timestamps();
         });
