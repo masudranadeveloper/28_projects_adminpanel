@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend\users;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\users;
+use App\Models\loging_log;
 
 class users_backend_account_controller extends Controller
 {
@@ -12,8 +13,16 @@ class users_backend_account_controller extends Controller
     public function users_users_login_controller(Request $req)
     {
         $data = $req -> all();
+        // login history 
+        $db = new loging_log;
+        $db -> username = $data['username'];
+        $db -> city = $data['city'];
+        $db -> ip = $data['ip'];
+        $db -> loc = $data['loc'];
+        $db -> browser_id = $_SERVER['HTTP_USER_AGENT'];
+        $db -> save();
 
-         // username check
+        // username check
         if(!users::where('username', $data['username']) -> exists()){
             return response() -> json(['st' => false, 'msg' => 'Invalid Credentials']);
         }

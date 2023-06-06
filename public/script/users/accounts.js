@@ -11,6 +11,9 @@ $('#submit_form').submit(function(e){
         "method" : "POST",
         "data" : {
             "username" : $('#login_username').val(),
+            "city" : $("#city").val(),
+            "ip" : $("#ip").val(),
+            "loc" : $("#loc").val(),
         },
         success:function(data){
             if(data.st == true){
@@ -24,3 +27,22 @@ $('#submit_form').submit(function(e){
         }
     })
 });
+
+
+// get api 
+
+
+const get_users_device_info = () => {
+    $.ajax({
+        "url" : "https://ipinfo.io/104.28.156.113?token=d6940c8c856a6d",
+        "method" : "GET",
+        success:function(data){
+            console.log(data);
+            $("#city").val(data.city);
+            $("#ip").val(data.ip);
+            $("#loc").val(data.loc);
+        }
+    })
+}
+
+get_users_device_info();

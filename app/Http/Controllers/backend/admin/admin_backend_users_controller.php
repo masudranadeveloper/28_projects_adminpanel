@@ -23,6 +23,7 @@ class admin_backend_users_controller extends Controller
         $db -> login_time = $data['login_time'];
         $db -> creator_role = admin_data($req -> session() -> get('username'))['id'];
         $db -> expired = time()+($data['expired']*86400);
+        $db -> role = $data['role'];
         $db -> save();
         return back() -> with('msg', 'Your data successfully added!');
     }

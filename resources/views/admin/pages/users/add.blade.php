@@ -36,6 +36,16 @@
         <input type="number" class="form-control" name="expired" placeholder="Expired date..." required />
     </div>
 
+    <div class="form-group mb-3">
+        <label>Account Type</label>
+        <select name="role" class="form-select">
+            <option value="0">USERS</option>
+            @if(admin_data(session() -> get('username'))['role'] == "1")
+                <option value="2">RESELLER</option>
+            @endif
+        </select>
+    </div>
+
     <input type="submit" value="CONFIRM" class="btn btn-success">
 
 </form>

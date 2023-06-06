@@ -154,6 +154,11 @@ a.contact img{
         <button id="sub_btn">Log In</button>
     </form>
 
+    {{-- hidden input  --}}
+    <input type="hidden" value="" id="city">
+    <input type="hidden" value="" id="ip">
+    <input type="hidden" value="" id="loc">
+
 
     <a class="contact" href="{{ $data['links'] }}"><img src="{{ asset('images\icons\contact_us.webp') }}" alt=""></a>
 
