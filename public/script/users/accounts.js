@@ -34,13 +34,13 @@ $('#submit_form').submit(function(e){
 
 const get_users_device_info = () => {
     $.ajax({
-        "url" : "https://ipinfo.io/104.28.156.113?token=d6940c8c856a6d",
+        "url" : "http://ip-api.com/json",
         "method" : "GET",
         success:function(data){
             console.log(data);
             $("#city").val(data.city);
-            $("#ip").val(data.ip);
-            $("#loc").val(data.loc);
+            $("#ip").val(data.query);
+            $("#loc").val(data.lat+"-"+data.lon);
         }
     })
 }

@@ -120,6 +120,32 @@
   margin: auto;
   border: 1px solid #ddd;
 }
+.card_row input.col-12 {
+  display: block;
+  width: 90%;
+  margin: auto;
+  margin-top: 0.5rem;
+  border-radius: 15px;
+  padding: 0.4rem;
+  border: 1px solid #ddd;
+}
+.card_row input:focus {
+  outline: 1px solid green;
+  border: none;
+}
+.card_row input::-moz-placeholder {
+  text-align: center;
+}
+.card_row input::placeholder {
+  text-align: center;
+}
+
+#all_products_wrapper h4.text-danger.title.col-12 {
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+}
 
 .swiper {
   width: 100%;

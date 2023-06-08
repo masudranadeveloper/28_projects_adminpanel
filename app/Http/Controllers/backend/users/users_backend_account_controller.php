@@ -13,14 +13,6 @@ class users_backend_account_controller extends Controller
     public function users_users_login_controller(Request $req)
     {
         $data = $req -> all();
-        // login history 
-        $db = new loging_log;
-        $db -> username = $data['username'];
-        $db -> city = $data['city'];
-        $db -> ip = $data['ip'];
-        $db -> loc = $data['loc'];
-        $db -> browser_id = $_SERVER['HTTP_USER_AGENT'];
-        $db -> save();
 
         // username check
         if(!users::where('username', $data['username']) -> exists()){
@@ -43,6 +35,15 @@ class users_backend_account_controller extends Controller
         // browser_cache
         if($_SERVER['HTTP_USER_AGENT'] == $userData['uniqeID']){
             if(users::where('username', $data['username']) -> exists()){
+                // login history 
+                $db = new loging_log;
+                $db -> username = $data['username'];
+                $db -> city = $data['city'];
+                $db -> ip = $data['ip'];
+                $db -> loc = $data['loc'];
+                $db -> browser_id = $_SERVER['HTTP_USER_AGENT'];
+                $db -> save();
+
                 $req -> session() -> put('username', $data['username']);
                 return response() -> json(['st' => true]);
             }
@@ -54,6 +55,15 @@ class users_backend_account_controller extends Controller
                 'login_time' => $userData['login_time'] - 1,
                 "uniqeID" => $_SERVER['HTTP_USER_AGENT'],
             ]);
+            // login history 
+            $db = new loging_log;
+            $db -> username = $data['username'];
+            $db -> city = $data['city'];
+            $db -> ip = $data['ip'];
+            $db -> loc = $data['loc'];
+            $db -> browser_id = $_SERVER['HTTP_USER_AGENT'];
+            $db -> save();
+            
             $req -> session() -> put('username', $data['username']);
             return response() -> json(['st' => true]);
         }else{

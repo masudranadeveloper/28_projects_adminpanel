@@ -37,7 +37,7 @@
                             <td>{{ $item['username'] }}</td>
                             <td>{{ ( $item['expired'] - time())/86400 }}</td>
                             <td>
-                                <a href="{{ route('admin_users_ban_api', ['id' => $item['id']]) }}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+                                <a href="{{ route('admin_reseller_ban_api', ['id' => $item['id']]) }}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
                                 <a href="{{ route('users.admin_update_web', ['id' => $item['id']]) }}" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a>
                             </td>
                         </tr>

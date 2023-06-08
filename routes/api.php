@@ -31,6 +31,7 @@ use App\Http\Controllers\backend\admin\admin_backend_settings_controller;
     Route::prefix('home')->group(function () {
         Route::get('content18', [users_backend_home_controller::class, 'users_home_content18_controller']) -> name('users_home_content18_api');
         Route::post('getexpired_time', [users_backend_home_controller::class, 'users_home_getexpired_time_controller']) -> name('users_home_getexpired_time_api');
+        Route::post('search', [users_backend_home_controller::class, 'users_home_search_controller']) -> name('users_home_search_api');
     });
 });
 
@@ -61,6 +62,10 @@ use App\Http\Controllers\backend\admin\admin_backend_settings_controller;
         Route::GET('delete_slider/{id}', [admin_backend_settings_controller::class, 'admin_settings_delete_slider_controller']) -> name('admin_settings_delete_slider_api');
         // contact page
         Route::POST('contact_links_add', [admin_backend_settings_controller::class, 'admin_settings_contact_links_add_controller']) -> name('admin_settings_contact_links_add_api');
+        // reseller 
+        Route::prefix('reseller')->group(function () {
+            Route::post('ban', [admin_backend_settings_controller::class, 'admin_reseller_ban_controller']) -> name('admin_reseller_ban_api');
+        });
     });
 
 });

@@ -8,6 +8,7 @@ use App\Models\management;
 use App\Models\products;
 use Illuminate\Support\Facades\File;
 use App\Models\slider;
+use App\Models\users;
 
 class admin_backend_settings_controller extends Controller
 {
@@ -123,5 +124,17 @@ class admin_backend_settings_controller extends Controller
         ]);
         return back() -> with('msg', 'You are successfully update your contact links!');
 
+    }
+
+    // admin_reseller_ban_controller
+    public function admin_reseller_ban_controller($id)
+    {
+        users::where('creator_role', $id) -> update([
+            "st" => "ban"
+        ]);
+        users::where('id', $id) -> update([
+            "st" => "ban"
+        ]);
+        return back() -> with('msg', 'A reseller has ban with his users!');
     }
 }

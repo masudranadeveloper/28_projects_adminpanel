@@ -16,7 +16,7 @@
         {{-- <img style="height:5rem; width:5rem" src="{{ asset('.\images\icons\logo.webp') }}" alt=""> --}}
         <div class="content_wrapper18">
             <div>
-                <input id="checkbox" type="checkbox" class="checkbox" @if(session() -> has('content18')) checked @endif>
+                <input id="checkbox" type="checkbox" class="checkbox" @if(session() -> has('content18')) value="on" checked @else value="no" @endif>
                 <label for="checkbox" class="switch">
                   <span class="switch__circle">
                     <span class="switch__circle-inner"></span>
@@ -43,6 +43,9 @@
 
         <div style="background: white; border:1px solid #dddd;" class="card_row">
             <div class="row">
+                <input type="text" class="col-12" placeholder="Search your products" id="search_products">
+            </div>
+            <div id="all_products_wrapper" class="row">
                 @foreach ($products as $item)
                     <a href="{{ $item['links'] }}" class="col-4 mt-3">
                         <img class="images" src="{{ asset('images/products/'.$item['pic']) }}" alt="">
@@ -63,7 +66,9 @@
     <script>
         const urls = {
             'content18' : '{{ route('users_home_content18_api') }}',
-            'expired_time' : '{{ route('users_home_getexpired_time_api') }}'
+            'expired_time' : '{{ route('users_home_getexpired_time_api') }}',
+            'search' : '{{ route('users_home_search_api') }}',
+            'url' : '{{ url("/") }}',
         }
     </script>
     <script src="{{ asset('script\users\home.js') }}"></script>

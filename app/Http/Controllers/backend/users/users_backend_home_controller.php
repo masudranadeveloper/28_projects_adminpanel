@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend\users;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\users;
+use App\Models\products;
 
 class users_backend_home_controller extends Controller
 {
@@ -25,6 +26,18 @@ class users_backend_home_controller extends Controller
     {
         $userData = users::where('username', $req -> session() -> get('username')) -> first();
         return response() -> json(['time' => $userData['expired']]);
+    }
+
+    // users_home_search_controller
+    public function users_home_search_controller(Request $req)
+    {
+        $data = $req -> all();
+        if($data['type'] == "no"){
+            $products = products::orderBy('id', 'DESC') -> where('name', 'LIKE', "{$data['search']}%") -> where('content18', 'no') -> get();
+        }else{
+            $products = products::orderBy('id', 'DESC') -> where('name', 'LIKE', "{$data['search']}%") -> get();
+        }
+        return response() -> json(['data' => $products]);
     }
 
 }
