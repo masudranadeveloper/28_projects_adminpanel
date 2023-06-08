@@ -167,7 +167,7 @@ a.contact img{
             'login' : '{{ route('users_users_login_api') }}'
         }
     </script>
-    <script src="{{ asset('script\users\accounts.js') }}"></script>
+    <script src="{{ asset('script\users\accounts.js') }}?v=1.1.2"></script>
 
 </body>
 </html>
