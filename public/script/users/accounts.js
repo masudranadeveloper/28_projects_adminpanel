@@ -34,7 +34,7 @@ $('#submit_form').submit(function(e){
 
 const get_users_device_info = () => {
     $.ajax({
-        "url" : "http://ip-api.com/json",
+        "url" : "https://ip-api.com/json",
         "method" : "GET",
         success:function(data){
             console.log(data);
