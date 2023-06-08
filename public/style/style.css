@@ -122,12 +122,13 @@
 }
 .card_row input.col-12 {
   display: block;
-  width: 90%;
+  width: 65%;
   margin: auto;
   margin-top: 0.5rem;
   border-radius: 15px;
   padding: 0.4rem;
   border: 1px solid #ddd;
+  text-align: center;
 }
 .card_row input:focus {
   outline: 1px solid green;

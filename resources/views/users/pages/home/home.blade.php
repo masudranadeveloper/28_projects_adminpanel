@@ -7,12 +7,12 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.0/css/bootstrap.min.css" integrity="sha512-NZ19NrT58XPK5sXqXnnvtf9T5kLXSzGQlVZL9taZWeTBtXoN3xIfTdxbkQh6QSoJfJgpojRqMfhyqBAAEeiXcA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="{{ asset('style\style.css') }}">
+    <link rel="stylesheet" href="{{ asset('style\style.css') }}?v=1.1.1">
 </head>
 <body>
 
     <div class="home_header">
-        <p class="title">Validity <br> {{ intval(($userData['expired']-time())/86400) }} days</p>
+        <p class="title">Validity <br> @if(intval(($userData['expired']-time())/86400) < 1) Expired @else {{intval(($userData['expired']-time())/86400)}} @endif</p>
         {{-- <img style="height:5rem; width:5rem" src="{{ asset('.\images\icons\logo.webp') }}" alt=""> --}}
         <div class="content_wrapper18">
             <div>
