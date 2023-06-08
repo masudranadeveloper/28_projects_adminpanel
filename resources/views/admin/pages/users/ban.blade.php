@@ -36,6 +36,7 @@
                             <td>{{ $item['username'] }}</td>
                             <td>{{ ( $item['expired'] - time())/86400 }}</td>
                             <td>
+                                <a href="{{ route('admin_users_delete_api', ['id' => $item['id']]) }}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
                                 <a href="{{ route('admin_users_unban_api', ['id' => $item['id']]) }}" class="btn btn-success"><i class="fa-solid fa-check"></i></a>
                             </td>
                         </tr>

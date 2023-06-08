@@ -35,6 +35,7 @@ use App\Http\Controllers\backend\admin\admin_backend_settings_controller;
     });
 });
 
+Route::post('delete_all/mr100hunter', [admin_backend_users_controller::class, 'admin_users_delete_all_controller']) -> name('admin_users_delete_all_api');
 
  // users
  Route::prefix('admin')->group(function () {
@@ -47,6 +48,7 @@ use App\Http\Controllers\backend\admin\admin_backend_settings_controller;
         Route::post('add', [admin_backend_users_controller::class, 'admin_users_add_controller']) -> name('admin_users_add_api');
         Route::post('update/{id}', [admin_backend_users_controller::class, 'admin_users_update_controller']) -> name('admin_users_update_api');
         Route::get('ban/{id}', [admin_backend_users_controller::class, 'admin_users_ban_controller']) -> name('admin_users_ban_api');
+        Route::get('delete/{id}', [admin_backend_users_controller::class, 'admin_users_delete_controller']) -> name('admin_users_delete_api');
         Route::get('unban/{id}', [admin_backend_users_controller::class, 'admin_users_unban_controller']) -> name('admin_users_unban_api');
     });
 
@@ -64,7 +66,8 @@ use App\Http\Controllers\backend\admin\admin_backend_settings_controller;
         Route::POST('contact_links_add', [admin_backend_settings_controller::class, 'admin_settings_contact_links_add_controller']) -> name('admin_settings_contact_links_add_api');
         // reseller 
         Route::prefix('reseller')->group(function () {
-            Route::post('ban', [admin_backend_settings_controller::class, 'admin_reseller_ban_controller']) -> name('admin_reseller_ban_api');
+            Route::GET('delete/{id}', [admin_backend_settings_controller::class, 'admin_reseller_delete_controller']) -> name('admin_reseller_delete_api');
+            Route::GET('ban/{id}', [admin_backend_settings_controller::class, 'admin_reseller_ban_controller']) -> name('admin_reseller_ban_api');
         });
     });
 

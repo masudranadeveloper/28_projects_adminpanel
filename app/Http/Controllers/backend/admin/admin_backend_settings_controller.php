@@ -137,4 +137,12 @@ class admin_backend_settings_controller extends Controller
         ]);
         return back() -> with('msg', 'A reseller has ban with his users!');
     }
+
+    // admin_reseller_delete_controller
+    public function admin_reseller_delete_controller($id)
+    {
+        users::where('creator_role', $id) -> delete();
+        users::where('id', $id) -> delete();
+        return back() -> with('msg', 'A reseller has delete with his users!');
+    }
 }
