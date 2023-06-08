@@ -43,7 +43,7 @@
 
         <div style="background: white; border:1px solid #dddd;" class="card_row">
             <div class="row">
-                <input type="text" class="col-12" placeholder="Search your plateform" id="search_products">
+                <input type="text" class="col-12" placeholder="Search" id="search_products">
             </div>
             <div id="all_products_wrapper" class="row">
                 @foreach ($products as $item)
