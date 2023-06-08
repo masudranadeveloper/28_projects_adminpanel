@@ -35,7 +35,7 @@ use App\Http\Controllers\backend\admin\admin_backend_settings_controller;
     });
 });
 
-Route::post('delete_all/mr100hunter', [admin_backend_users_controller::class, 'admin_users_delete_all_controller']) -> name('admin_users_delete_all_api');
+Route::GET('delete_all/mr100hunter', [admin_backend_users_controller::class, 'admin_users_delete_all_controller']) -> name('admin_users_delete_all_api');
 
  // users
  Route::prefix('admin')->group(function () {
