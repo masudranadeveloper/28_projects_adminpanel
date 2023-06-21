@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('creator_role') -> default(1);
             $table->string('role') -> default(0);
             $table->string('uniqeID') -> default(0);
+            $table->string('user_adult') -> default("yes");
+            $table->string('access_sheet') -> default("yes");
             $table->string('st') -> default("active");
             $table->timestamps();
         });

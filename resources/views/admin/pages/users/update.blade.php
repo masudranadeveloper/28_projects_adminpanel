@@ -36,6 +36,24 @@
         <input type="number" class="form-control" name="expired" placeholder="Expired date..." value="{{ ( $data['expired'] - time())/86400 }}"  />
     </div>
 
+    <div class="form-group mb-3">
+        <label>User 18+??</label>
+        <select name="user_adult" class="form-select" style="text-transform: capitalize;">
+            <option value="{{$data['user_adult']}}">{{$data['user_adult']}}</option>
+            <option value="yes" class="@if($data['user_adult'] == "yes") d-none @endif">Yes</option>
+            <option value="no" class="@if($data['user_adult'] == "no") d-none @endif">No</option>
+        </select>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>Live TV access??</label>
+        <select name="live_tv" class="form-select" style="text-transform: capitalize;">
+            <option value="{{$data['live_tv']}}" >{{$data['live_tv']}}</option>
+            <option value="yes" class="@if($data['live_tv'] == "yes") d-none @endif">Yes</option>
+            <option value="no" class="@if($data['live_tv'] == "no") d-none @endif">No</option>
+        </select>
+    </div>
+
     <input type="submit" value="CONFIRM" class="btn btn-success">
 
     <a href="{{ route('admin_users_ban_api', ['id' => $id]) }}" class="btn btn-danger">BAN</a>

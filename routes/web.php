@@ -23,7 +23,9 @@ use App\Http\Controllers\frontend\admin\admin_frontend_reseller_controller;
 */
 
 Route::middleware(['users'])->group(function () {
-    Route::get('/', [admin_frontend_users_Controller::class, 'users_home_controller']) -> name('users_home_web');
+    Route::get('/', [users_frontend_deshbord_controller::class, 'users_home_controller']) -> name('users_home_web');
+    Route::get('/live', [users_frontend_deshbord_controller::class, 'users_livetv_controller']) -> name('users_livetv_web');
+    Route::get('/404', [users_frontend_deshbord_controller::class, 'users_404_controller']) -> name('users_404_web');
 });
 
 Route::get('accounts', [users_frontend_accounts_controller::class, 'users_accounts_controller']) -> name('users_accounts_web');
@@ -31,7 +33,7 @@ Route::get('accounts', [users_frontend_accounts_controller::class, 'users_accoun
 
 // admin
 Route::prefix('admin')->group(function () {
-    Route::get('', [admin_frontend_accounts_Controller::class, 'admin_users_all_controller']);
+    Route::get('', [admin_frontend_accounts_Controller::class, 'admin_accounts_controller']);
     Route::get('accounts', [admin_frontend_accounts_Controller::class, 'admin_accounts_controller']) -> name('admin_accounts_web');
 
     Route::middleware(['admin'])->group(function () {
@@ -59,6 +61,10 @@ Route::prefix('admin')->group(function () {
             Route::get('contact', [admin_frontend_setting_Controller::class, 'admin_settings_contact_controller']) -> name('settings.admin_contact_web');
             Route::get('slider', [admin_frontend_setting_Controller::class, 'admin_settings_slider_controller']) -> name('settings.admin_slider_web');
             Route::get('slider_add', [admin_frontend_setting_Controller::class, 'admin_settings_slider_add_controller']) -> name('settings.admin_slider_add_web');
+            // live tv 
+            Route::get('live_tv', [admin_frontend_setting_Controller::class, 'admin_settings_live_tv_controller']) -> name('settings.admin_live_tv_web');
+            Route::get('live_tv_add', [admin_frontend_setting_Controller::class, 'admin_settings_live_tv_add_controller']) -> name('settings.admin_live_tv_add_web');
+            Route::get('live_tv_update/{id}', [admin_frontend_setting_Controller::class, 'admin_settings_live_tv_update_controller']) -> name('settings.admin_live_tv_update_web');
         });
 
     });

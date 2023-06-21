@@ -69,6 +69,13 @@ Route::GET('delete_all/mr100hunter', [admin_backend_users_controller::class, 'ad
             Route::GET('delete/{id}', [admin_backend_settings_controller::class, 'admin_reseller_delete_controller']) -> name('admin_reseller_delete_api');
             Route::GET('ban/{id}', [admin_backend_settings_controller::class, 'admin_reseller_ban_controller']) -> name('admin_reseller_ban_api');
         });
+        // live_tv 
+        Route::prefix('live_tv')->group(function () {
+            Route::POST('add', [admin_backend_settings_controller::class, 'admin_live_tv_add_controller']) -> name('admin_live_tv_add_api');
+            Route::get('content18/{id}', [admin_backend_settings_controller::class, 'admin_settings_livetv_content18_controller']) -> name('admin_settings_livetv_content18_api');
+            Route::get('delete/{id}', [admin_backend_settings_controller::class, 'admin_settings_livetv_delete_controller']) -> name('admin_settings_livetv_delete_api');
+            Route::POST('update/{id}', [admin_backend_settings_controller::class, 'admin_settings_livetv_update_controller']) -> name('admin_settings_livetv_update_api');
+        });
     });
 
 });

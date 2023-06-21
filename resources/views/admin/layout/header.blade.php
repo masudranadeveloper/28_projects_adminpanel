@@ -77,6 +77,9 @@
                                 <li>
                                     <a style="{{Route::is('settings.admin_contact_web') ? 'color: green !important' : ''}}" href="{{route('settings.admin_contact_web')}}">CONTACT</a></a>
                                 </li>
+                                <li>
+                                    <a style="{{Route::is('settings.admin_live_tv_web') ? 'color: green !important' : ''}}" href="{{route('settings.admin_live_tv_web')}}">LIVE TV</a></a>
+                                </li>
                             </ul>
                         </li>
                     @endif

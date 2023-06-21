@@ -9,6 +9,7 @@ use App\Models\products;
 use Illuminate\Support\Facades\File;
 use App\Models\slider;
 use App\Models\users;
+use App\Models\live_tv;
 
 class admin_backend_settings_controller extends Controller
 {
@@ -144,5 +145,72 @@ class admin_backend_settings_controller extends Controller
         users::where('creator_role', $id) -> delete();
         users::where('id', $id) -> delete();
         return back() -> with('msg', 'A reseller has delete with his users!');
+    }
+
+    // admin_live_tv_add_controller
+    public function admin_live_tv_add_controller(Request $req)
+    {
+        $pic = $req -> file('pic');
+        $pic_name = time().".".$pic -> getClientOriginalExtension();
+        $pic -> move(public_path("images/products"), $pic_name);
+
+
+        $data = $req -> all();
+        $db = new live_tv;
+        $db -> name = $data['name'];
+        $db -> pic = $pic_name;
+        // links && expired 
+        $db -> links1 = $data['links1'];
+        $db -> links2 = $data['links2'];
+        $db -> links3 = $data['links3'];
+        $db -> links4 = $data['links4'];
+
+        $db -> expired1 = time()+($data['expired1']*60*60);
+        $db -> expired2 = time()+($data['expired2']*60*60);
+        $db -> expired3 = time()+($data['expired3']*60*60);
+        $db -> expired4 = time()+($data['expired4']*60*60);
+
+        $db -> content18 = !empty($data['content18']) ? $data['content18'] : "no";
+        $db -> save();
+
+        return back() -> with('msg', 'A movie links successfully added!');
+    }
+
+    // admin_settings_livetv_content18_controller
+    public function admin_settings_livetv_content18_controller($id)
+    {
+        $live_tv = live_tv::where('id', $id) -> first();
+        live_tv::where('id', $id) -> update([
+            "content18" => $live_tv['content18'] == "no" ? "yes" : "no"
+        ]);
+        return back() -> with('msg', '18+ content status successfully updated!');
+    }
+    // admin_settings_livetv_delete_controller
+    public function admin_settings_livetv_delete_controller($id)
+    {
+        $live_tv = live_tv::where('id', $id) -> first();
+        File::delete(public_path("images/products/".$live_tv['pic']));
+        live_tv::where('id', $id) -> delete();
+        return back() -> with('msg', 'Success deleted!');
+    }
+
+    // admin_settings_livetv_update_controller
+    public function admin_settings_livetv_update_controller(Request $req, $id)
+    {
+        $data = $req -> all();
+        live_tv::where('id', $id) -> update([
+            "name" => $data['name'],
+            "content18" => !empty($data['content18']) ? $data['content18'] : "no",
+            "links1" => $data['links1'],
+            "links2" => $data['links2'],
+            "links3" => $data['links3'],
+            "links4" => $data['links4'],
+            "expired1" => time()+($data['expired1']*60*60),
+            "expired2" => time()+($data['expired2']*60*60),
+            "expired3" => time()+($data['expired3']*60*60),
+            "expired4" => time()+($data['expired4']*60*60),
+
+        ]);
+        return back() -> with('msg', 'Live tv content successfully updated!');
     }
 }

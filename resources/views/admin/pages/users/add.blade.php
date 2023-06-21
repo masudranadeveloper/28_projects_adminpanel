@@ -37,6 +37,23 @@
     </div>
 
     <div class="form-group mb-3">
+        <label>User 18+??</label>
+        <select name="user_adult" class="form-select">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>Access details</label>
+        <select name="access_sheet" class="form-select">
+            <option value="all">All</option>
+            <option value="yes">Movie Series</option>
+            <option value="no">Live TV</option>
+        </select>
+    </div>
+
+    <div class="form-group mb-3">
         <label>Account Type</label>
         <select name="role" class="form-select">
             <option value="0">USERS</option>
