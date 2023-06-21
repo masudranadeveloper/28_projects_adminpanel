@@ -46,7 +46,7 @@
 
     <div class="form-group mb-3">
         <label>Access details</label>
-        <select name="access_sheet" class="form-select">
+        <select name="live_tv" class="form-select">
             <option value="all">All</option>
             <option value="yes">Movie Series</option>
             <option value="no">Live TV</option>
