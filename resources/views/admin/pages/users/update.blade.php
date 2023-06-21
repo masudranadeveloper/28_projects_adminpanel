@@ -46,9 +46,10 @@
     </div>
 
     <div class="form-group mb-3">
-        <label>Live TV access??</label>
+        <label>Access Details</label>
         <select name="live_tv" class="form-select" style="text-transform: capitalize;">
             <option value="{{$data['live_tv']}}" >{{$data['live_tv']}}</option>
+            <option value="all" class="@if($data['live_tv'] == "all") d-none @endif">All</option>
             <option value="yes" class="@if($data['live_tv'] == "yes") d-none @endif">Yes</option>
             <option value="no" class="@if($data['live_tv'] == "no") d-none @endif">No</option>
         </select>
