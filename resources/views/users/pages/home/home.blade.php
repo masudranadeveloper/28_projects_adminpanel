@@ -48,13 +48,13 @@
         <div style="background: white; border:1px solid #dddd;" class="card_row">
 
             <div class="row p-3">
-                @if (($userData['access_sheet'] == "all") || ($userData['access_sheet'] == "movie"))
+                @if (($userData['live_tv'] == "all") || ($userData['live_tv'] == "movie"))
                     <div class="col-6">
                         <a href="{{route("users_home_web")}}" class="btn @if(Route::is("users_home_web")) btn-success @else btn-secondary  @endif" style="width:100%; text-align: center; text-transform:uppercase;">MOVIE series</a>
                     </div>
                 @endif
                
-                @if (($userData['access_sheet'] == "all") || ($userData['access_sheet'] == "live"))
+                @if (($userData['live_tv'] == "all") || ($userData['live_tv'] == "live"))
                     <div class="col-6">
                         <a href="{{route("users_livetv_web")}}" class="btn @if(Route::is("users_livetv_web")) btn-success @else btn-secondary  @endif" style="width:100%; text-align: center; text-transform:uppercase;">LIVE TV</a>
                     </div>
