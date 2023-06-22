@@ -37,7 +37,7 @@
         </div>
         <div class="form-group mb-3">
             <label>Movie Links Expired1</label>
-            <input type="text" class="form-control" name="expired1" value="{{$data['expired1']}}" />
+            <input type="text" class="form-control" name="expired1" value="{{number_format(($data['expired1']-time())/(60*60), 2)}}" />
         </div>
     
         <div class="form-group">
@@ -46,7 +46,7 @@
         </div>
         <div class="form-group mb-3">
             <label>Movie Links Expired2</label>
-            <input type="text" class="form-control" name="expired2" value="{{$data['expired2']}}" />
+            <input type="text" class="form-control" name="expired2" value="{{number_format(($data['expired2']-time())/(60*60), 2)}}" />
         </div>
     
         <div class="form-group">
@@ -55,7 +55,7 @@
         </div>
         <div class="form-group mb-3">
             <label>Movie Links Expired3</label>
-            <input type="text" class="form-control" name="expired3" value="{{$data['expired3']}}" />
+            <input type="text" class="form-control" name="expired3" value="{{number_format(($data['expired3']-time())/(60*60), 2)}}" />
         </div>
     
         <div class="form-group">
@@ -64,7 +64,7 @@
         </div>
         <div class="form-group mb-3">
             <label>Movie Links Expired4</label>
-            <input type="text" class="form-control" name="expired4" value="{{$data['expired4']}}" />
+            <input type="text" class="form-control" name="expired4" value="{{number_format(($data['expired4']-time())/(60*60), 2)}}" />
         </div>
     </div>
     
