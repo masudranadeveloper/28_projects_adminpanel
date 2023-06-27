@@ -12,7 +12,7 @@
 <body>
 
     <div class="home_header">
-        <p class="title">Validity <br> @if(intval(($userData['expired']-time())/86400) < 1) Expired Today @else {{intval(($userData['expired']-time())/86400)}} days @endif</p>
+        <p class="title">Username: {{$userData['username']}} <br> @if(intval(($userData['expired']-time())/86400) < 1) Expired Today @else Validity:  {{intval(($userData['expired']-time())/86400)}} days @endif</p>
         {{-- <img style="height:5rem; width:5rem" src="{{ asset('.\images\icons\logo.webp') }}" alt=""> --}}
         <div class="content_wrapper18">
             <div>
