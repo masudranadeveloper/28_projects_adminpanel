@@ -22,6 +22,11 @@
     </div>
 
     <div class="form-group mb-3">
+        <label>Links</label>
+        <input type="text" class="form-control" name="links1" value="{{$data['links1']}}"/>
+    </div>
+
+    <div class="form-group mb-3">
         <label for="content18">18+ content</label>
         <input type="checkbox" name="content18" id="content18" value="yes" @if($data['content18'] == "yes") checked @endif />
     </div>
@@ -30,10 +35,10 @@
     <hr>
     <br>
 
-    <div class="card p-3 mb-4">
+    <div class="card p-3 mb-4 d-none">
         <div class="form-group">
             <label>Movie Links1</label>
-            <input type="text" class="form-control" name="links1" value="{{$data['links1']}}" />
+            <input type="text" class="form-control" name="linksss1" value="{{$data['links1']}}" />
         </div>
         <div class="form-group mb-3">
             <label>Movie Links Expired1</label>

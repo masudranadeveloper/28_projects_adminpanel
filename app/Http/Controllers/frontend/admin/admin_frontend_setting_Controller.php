@@ -58,7 +58,7 @@ class admin_frontend_setting_Controller extends Controller
     // admin_settings_live_tv_controller
     public function admin_settings_live_tv_controller()
     {
-        $products = live_tv::orderBy('id', 'DESC') -> where("expired1", '>', time()) -> orWhere("expired2", '>', time()) -> orWhere("expired3", '>', time()) -> orWhere("expired4", '>', time()) -> paginate(10);
+        $products = live_tv::orderBy('id', 'DESC') -> paginate(10);
         return view('admin.pages.settings.live_tv.live_tv') -> with(compact('products'));
     }
 

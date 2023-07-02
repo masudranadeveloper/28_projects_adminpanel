@@ -22,8 +22,13 @@
     </div>
 
     <div class="form-group mb-3">
+        <label>Links</label>
+        <input type="text" class="form-control" name="links1"  />
+    </div>
+
+    <div class="form-group mb-3">
         <label>Picture</label>
-        <input type="file" class="form-control" name="pic"  />
+        <input type="file" class="form-control" name="pic" />
     </div>
 
     <div class="form-group mb-3">
@@ -31,14 +36,11 @@
         <input type="checkbox" name="content18" id="content18" value="yes" />
     </div>
 
-    <br>
-    <hr>
-    <br>
 
-    <div class="card p-3 mb-4">
+    <div class="card p-3 mb-4 d-none">
         <div class="form-group">
             <label>Movie Links1</label>
-            <input type="text" class="form-control" name="links1" value="Links1" />
+            <input type="text" class="form-control" name="linksaa1" value="Links1" />
         </div>
         <div class="form-group mb-3">
             <label>Movie Links Expired1</label>

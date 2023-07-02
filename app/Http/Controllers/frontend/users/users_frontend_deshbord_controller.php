@@ -39,15 +39,15 @@ class users_frontend_deshbord_controller extends Controller
         $userData = users::where('username', $request -> session() -> get('username')) -> first();
         if($request -> session() -> has('content18')){
             if($userData['user_adult'] == "yes"){
-                $products = live_tv::orderBy('id', 'DESC') -> where("expired1", '>', time()) -> orWhere("expired2", '>', time()) -> orWhere("expired3", '>', time()) -> orWhere("expired4", '>', time()) -> get();
+                $products = live_tv::orderBy('id', 'DESC') -> get();
             }else{
-                $products = live_tv::orderBy('id', 'DESC') -> where("content18", "no") -> where("expired1", '>', time()) -> orWhere("expired2", '>', time()) -> orWhere("expired3", '>', time()) -> orWhere("expired4", '>', time()) -> get();
+                $products = live_tv::orderBy('id', 'DESC') -> where("content18", "no") -> get();
             }
         }else{
             if($userData['user_adult'] == "yes"){
-                $products = live_tv::orderBy('id', 'DESC') -> where("expired1", '>', time()) -> orWhere("expired2", '>', time()) -> orWhere("expired3", '>', time()) -> orWhere("expired4", '>', time()) -> where('content18', 'no') -> get();
+                $products = live_tv::orderBy('id', 'DESC') -> where('content18', 'no') -> get();
             }else{
-                $products = live_tv::orderBy('id', 'DESC') -> where("content18", 'no') -> where("expired1", '>', time()) -> orWhere("expired2", '>', time()) -> orWhere("expired3", '>', time()) -> orWhere("expired4", '>', time()) -> where('content18', 'no') -> get();
+                $products = live_tv::orderBy('id', 'DESC') -> where("content18", 'no') -> where('content18', 'no') -> get();
             }
         }
         $slider = slider::orderBy('id', 'DESC') -> get();

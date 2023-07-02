@@ -70,17 +70,17 @@
                         if(Route::is("users_home_web")){
                             $links = $item['links'];
                         }else{
-                            if($item['expired1'] > time()){
+                            // if($item['expired1'] > time()){
                                 $links = $item['links1'];
-                            }else if($item['expired2'] > time()){
-                                $links = $item['links2'];
-                            }else if($item['expired3'] > time()){
-                                $links = $item['links3'];
-                            }else if($item['expired4'] > time()){
-                                $links = $item['links4'];
-                            }else{
-                                $links = "Sorry all links is expired";
-                            }
+                            // }else if($item['expired2'] > time()){
+                            //     $links = $item['links2'];
+                            // }else if($item['expired3'] > time()){
+                            //     $links = $item['links3'];
+                            // }else if($item['expired4'] > time()){
+                            //     $links = $item['links4'];
+                            // }else{
+                            //     $links = "Sorry all links is expired";
+                            // }
                         }
                     @endphp
                     <a href="{{ $links }}" class="col-4 mt-3">
