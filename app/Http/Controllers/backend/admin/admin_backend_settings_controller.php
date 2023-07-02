@@ -165,10 +165,10 @@ class admin_backend_settings_controller extends Controller
         $db -> links3 = $data['links3'];
         $db -> links4 = $data['links4'];
 
-        $db -> expired1 = time()+($data['expired1']*60*60);
-        $db -> expired2 = time()+($data['expired2']*60*60);
-        $db -> expired3 = time()+($data['expired3']*60*60);
-        $db -> expired4 = time()+($data['expired4']*60*60);
+        $db -> expired1 = "ok";//time()+($data['expired1']*60*60);
+        $db -> expired2 = "ok";//time()+($data['expired2']*60*60);
+        $db -> expired3 = "ok";//time()+($data['expired3']*60*60);
+        $db -> expired4 = "ok";//time()+($data['expired4']*60*60);
 
         $db -> content18 = !empty($data['content18']) ? $data['content18'] : "no";
         $db -> save();
@@ -205,10 +205,10 @@ class admin_backend_settings_controller extends Controller
             "links2" => $data['links2'],
             "links3" => $data['links3'],
             "links4" => $data['links4'],
-            "expired1" => time()+($data['expired1']*60*60),
-            "expired2" => time()+($data['expired2']*60*60),
-            "expired3" => time()+($data['expired3']*60*60),
-            "expired4" => time()+($data['expired4']*60*60),
+            "expired1" => "ok",//time()+($data['expired1']*60*60),
+            "expired2" => "ok",//time()+($data['expired2']*60*60),
+            "expired3" => "ok",//time()+($data['expired3']*60*60),
+            "expired4" => "ok",//time()+($data['expired4']*60*60),
 
         ]);
         return back() -> with('msg', 'Live tv content successfully updated!');
