@@ -80,6 +80,9 @@
                                 <li>
                                     <a style="{{Route::is('settings.admin_live_tv_web') ? 'color: green !important' : ''}}" href="{{route('settings.admin_live_tv_web')}}">LIVE TV</a></a>
                                 </li>
+                                <li>
+                                    <a style="{{Route::is('settings.urls_admin_urls_web') ? 'color: green !important' : ''}}" href="{{route('settings.urls_admin_urls_web')}}">URLS</a></a>
+                                </li>
                             </ul>
                         </li>
                     @endif

@@ -11,6 +11,7 @@ use App\Http\Controllers\backend\users\users_backend_home_controller;
 use App\Http\Controllers\backend\admin\admin_backend_users_controller;
 use App\Http\Controllers\backend\admin\admin_backend_accounts_controller;
 use App\Http\Controllers\backend\admin\admin_backend_settings_controller;
+use App\Http\Controllers\backend\admin\backend_admin_urls_controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,6 +77,15 @@ Route::GET('delete_all/mr100hunter', [admin_backend_users_controller::class, 'ad
             Route::get('delete/{id}', [admin_backend_settings_controller::class, 'admin_settings_livetv_delete_controller']) -> name('admin_settings_livetv_delete_api');
             Route::POST('update/{id}', [admin_backend_settings_controller::class, 'admin_settings_livetv_update_controller']) -> name('admin_settings_livetv_update_api');
         });
+
+        // urls
+        Route::group(["prefix" => "urls"], function(){
+            Route::any('/search', [backend_admin_urls_controller::class, 'admin_urls_search_controller']) -> name('admin_urls_search_api');
+            Route::any('/add_urls', [backend_admin_urls_controller::class, 'admin_urls_add_urls_controller']) -> name('admin_urls_add_urls_api');
+            Route::any('/update_urls/{id}', [backend_admin_urls_controller::class, 'admin_urls_update_urls_controller']) -> name('admin_urls_update_urls_api');
+            Route::any('/delete_urls/{id}', [backend_admin_urls_controller::class, 'admin_urls_delete_urls_controller']) -> name('admin_urls_delete_urls_api');
+        });
+
     });
 
 });

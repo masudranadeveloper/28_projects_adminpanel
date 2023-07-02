@@ -11,6 +11,7 @@ use App\Http\Controllers\frontend\admin\admin_frontend_accounts_Controller;
 use App\Http\Controllers\frontend\admin\admin_frontend_users_Controller;
 use App\Http\Controllers\frontend\admin\admin_frontend_setting_Controller;
 use App\Http\Controllers\frontend\admin\admin_frontend_reseller_controller;
+use App\Http\Controllers\frontend\admin\admin_frontend_urls_controller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +27,7 @@ Route::middleware(['users'])->group(function () {
     Route::get('/', [users_frontend_deshbord_controller::class, 'users_home_controller']) -> name('users_home_web');
     Route::get('/live', [users_frontend_deshbord_controller::class, 'users_livetv_controller']) -> name('users_livetv_web');
     Route::get('/404', [users_frontend_deshbord_controller::class, 'users_404_controller']) -> name('users_404_web');
+    Route::get('links/{uniqeKey?}', [admin_frontend_urls_controller::class, 'admin_urls_links_controller']) -> name('settings.urls_admin_urls_links_web');
 });
 
 Route::get('accounts', [users_frontend_accounts_controller::class, 'users_accounts_controller']) -> name('users_accounts_web');
@@ -65,6 +67,10 @@ Route::prefix('admin')->group(function () {
             Route::get('live_tv', [admin_frontend_setting_Controller::class, 'admin_settings_live_tv_controller']) -> name('settings.admin_live_tv_web');
             Route::get('live_tv_add', [admin_frontend_setting_Controller::class, 'admin_settings_live_tv_add_controller']) -> name('settings.admin_live_tv_add_web');
             Route::get('live_tv_update/{id}', [admin_frontend_setting_Controller::class, 'admin_settings_live_tv_update_controller']) -> name('settings.admin_live_tv_update_web');
+            // urls 
+            Route::prefix('urls')->group(function () {
+                Route::get('', [admin_frontend_urls_controller::class, 'admin_urls_controller']) -> name('settings.urls_admin_urls_web');
+            });
         });
 
     });
