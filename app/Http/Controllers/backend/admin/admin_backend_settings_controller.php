@@ -13,14 +13,48 @@ use App\Models\live_tv;
 
 class admin_backend_settings_controller extends Controller
 {
-    //admin_add_links_controller
-    public function admin_add_links_controller(Request $req)
+    //admin_change_mangement_controller
+    public function admin_change_mangement_controller(Request $req)
     {
         $data = $req -> all();
+        $manage_data =  management::where('id', 1) -> first();
+
+        if(!empty($req -> file('img1'))){
+            $pic = $req -> file('img1');
+            $pic_name1 = time().".".$pic -> getClientOriginalExtension();
+            $pic -> move(public_path("images/contact"), $pic_name1);
+        }else{
+            $pic_name1 = $manage_data['img1'];
+        }
+
+        if(!empty($req -> file('img2'))){
+            $pic = $req -> file('img2');
+            $pic_name2 = time().".".$pic -> getClientOriginalExtension();
+            $pic -> move(public_path("images/contact"), $pic_name2);
+        }else{
+            $pic_name2 = $manage_data['img2'];
+        }
+
+        if(!empty($req -> file('img3'))){
+            $pic = $req -> file('img3');
+            $pic_name3 = time().".".$pic -> getClientOriginalExtension();
+            $pic -> move(public_path("images/contact"), $pic_name3);
+        }else{
+            $pic_name3 = $manage_data['img3'];
+        }
+        
+
+
         management::where('id', 1) -> update([
-            "links" => $data['links']
+            "links1" => $data['links1'],
+            "links2" => $data['links2'],
+            "links3" => $data['links3'],
+
+            "img1" => $pic_name1,
+            "img2" => $pic_name2,
+            "img3" => $pic_name3,
         ]);
-        return back() -> with('msg', 'SUccessfully updated!');
+        return back() -> with('msg', 'Your new link successfully updated!');
     }
 
     // admin_settings_content18_controller

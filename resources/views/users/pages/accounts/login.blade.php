@@ -136,10 +136,10 @@
         </form>
         <div class="text-center fs-6">
             <a href="#">Contact US</a>
-            <div class="icons">
-                <a href=""><i style="font-size: 2.5rem;" class="fa-brands fa-facebook"></i></a>
-                <a href=""><i style="font-size: 2.5rem;" class="fa-brands fa-whatsapp"></i></a>
-                <a href=""><i style="font-size: 2.5rem;" class="fa-brands fa-telegram"></i></a>
+            <div class="icons" style="display: flex; align-items:center;justify-content:center; gap:15px">
+                <a href="{{$data['links1']}}"><img style="width: 3rem;height: 3rem;border-radius: 50%;" src="{{asset('images/contact/'.$data['img1'])}}" alt=""></a>
+                <a href="{{$data['links2']}}"><img style="width: 3rem;height: 3rem;border-radius: 50%;" src="{{asset('images/contact/'.$data['img2'])}}" alt=""></a>
+                <a href="{{$data['links3']}}"><img style="width: 3rem;height: 3rem;border-radius: 50%;" src="{{asset('images/contact/'.$data['img3'])}}" alt=""></a>
             </div>
         </div>
     </div>

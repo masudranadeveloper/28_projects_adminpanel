@@ -42,7 +42,7 @@ Route::GET('delete_all/mr100hunter', [admin_backend_users_controller::class, 'ad
  Route::prefix('admin')->group(function () {
     Route::post('login', [admin_backend_accounts_controller::class, 'admin_login_controller']) -> name('admin_login_api');
 
-    Route::post('add_links', [admin_backend_settings_controller::class, 'admin_add_links_controller']) -> name('admin_add_links_api');
+    Route::post('change_mangement', [admin_backend_settings_controller::class, 'admin_change_mangement_controller']) -> name('admin_change_mangement_api');
     // users
     Route::prefix('users')->group(function () {
         Route::post('search', [admin_backend_users_controller::class, 'admin_users_search_controller']) -> name('admin_users_search_api');

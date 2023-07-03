@@ -15,7 +15,12 @@ return new class extends Migration
     {
         Schema::create('management', function (Blueprint $table) {
             $table->id();
-            $table->text('links');
+            $table->text('img1') -> nullable();
+            $table->text('links1') -> nullable();
+            $table->text('img2') -> nullable();
+            $table->text('links2') -> nullable();
+            $table->text('img3') -> nullable();
+            $table->text('links3') -> nullable();
             $table->timestamps();
         });
     }
