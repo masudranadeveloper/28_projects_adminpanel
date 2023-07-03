@@ -42,7 +42,14 @@ class admin_backend_settings_controller extends Controller
         }else{
             $pic_name3 = $manage_data['img3'];
         }
-        
+
+        if(!empty($req -> file('logo'))){
+            $pic = $req -> file('logo');
+            $logo = time().".".$pic -> getClientOriginalExtension();
+            $pic -> move(public_path("images/contact"), $logo);
+        }else{
+            $logo = $manage_data['logo'];
+        }
 
 
         management::where('id', 1) -> update([
@@ -50,6 +57,7 @@ class admin_backend_settings_controller extends Controller
             "links2" => $data['links2'],
             "links3" => $data['links3'],
 
+            "logo" => $logo,
             "img1" => $pic_name1,
             "img2" => $pic_name2,
             "img3" => $pic_name3,

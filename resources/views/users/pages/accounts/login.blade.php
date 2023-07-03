@@ -120,7 +120,7 @@
 
     <div class="wrapper">
         <div class="logo">
-            <img src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-bird-symbols-png-logo-0.png" alt="">
+            <img src="{{asset('images/contact/'.$data['logo'])}}" alt="">
         </div>
         <div class="text-center mt-4 name">
             WELCOME
@@ -128,6 +128,7 @@
         <form class="p-3 mt-3" id="submit_form">
             <p style="color: red;text-align:center;margin-bottom:2rem; margin-top:1rem" id="error"></p>
 
+            <p style="text-align: center">Enter your username</p>
             <div class="form-field d-flex align-items-center">
                 <span class="far fa-user"></span>
                 <input type="text" name="userName" id="login_username" placeholder="Username">
