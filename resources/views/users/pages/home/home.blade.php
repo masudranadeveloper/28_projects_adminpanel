@@ -29,7 +29,6 @@
     </div>
 
     <div class="container">
-
           <!-- Swiper -->
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
@@ -93,9 +92,8 @@
 
     </div>
 
-    {{-- <div class="container">
-        <p>{{ $_SERVER['HTTP_USER_AGENT'] }}</p>
-    </div> --}}
+    
+    <input type="hidden" id="where" value="{{$where}}" />
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>

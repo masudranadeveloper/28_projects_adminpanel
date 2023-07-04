@@ -21,7 +21,7 @@ $('#submit_form').submit(function(e){
                 window.location.href=window.location.origin;
             }else{
                 $('#sub_btn').html('TRY AGAIN');
-                $('#error').html(data.msg);
+                $('#error').html(`<p style="color: red;text-align:center; margin:0 !important">${data.msg}</p>`);
             }
             $('#sub_btn').attr('disabled', false);
         }

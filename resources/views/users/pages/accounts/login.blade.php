@@ -125,8 +125,9 @@
         <div class="text-center mt-4 name">
             WELCOME
         </div>
-        <form class="p-3 mt-3" id="submit_form">
-            <p style="color: red;text-align:center;margin-bottom:2rem; margin-top:1rem" id="error"></p>
+        <form style="padding-top: 0 !important" class="p-3" id="submit_form">
+
+            <span id="error"></span>
 
             <p style="text-align: center">Enter your username</p>
             <div class="form-field d-flex align-items-center">
@@ -136,8 +137,8 @@
             <button id="sub_btn" class="btn mt-3">Login</button>
         </form>
         <div class="text-center fs-6">
-            <a href="#">Contact US</a>
-            <div class="icons" style="display: flex; align-items:center;justify-content:center; gap:15px">
+            <a href="#" class="">Contact US</a>
+            <div class="icons mt-3" style="display: flex; align-items:center;justify-content:center; gap:15px">
                 <a href="{{$data['links1']}}"><img style="width: 3rem;height: 3rem;border-radius: 50%;" src="{{asset('images/contact/'.$data['img1'])}}" alt=""></a>
                 <a href="{{$data['links2']}}"><img style="width: 3rem;height: 3rem;border-radius: 50%;" src="{{asset('images/contact/'.$data['img2'])}}" alt=""></a>
                 <a href="{{$data['links3']}}"><img style="width: 3rem;height: 3rem;border-radius: 50%;" src="{{asset('images/contact/'.$data['img3'])}}" alt=""></a>
@@ -156,7 +157,7 @@
             'login' : '{{ route('users_users_login_api') }}'
         }
     </script>
-    <script src="{{ asset('script\users\accounts.js') }}?v=1.1.2"></script>
+    <script src="{{ asset('script\users\accounts.js') }}?v=1.1.3"></script>
 
 </body>
 </html>

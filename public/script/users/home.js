@@ -21,6 +21,7 @@ $("#search_products").keyup(function(){
         "url" : urls.search,
         "method" : "POST",
         "data" : {
+            "where" : $("#where").val(),
             "type" : $("#checkbox").val(),
             "search" : $("#search_products").val()
         },

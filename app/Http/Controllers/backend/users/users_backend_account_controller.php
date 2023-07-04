@@ -24,12 +24,12 @@ class users_backend_account_controller extends Controller
 
         // expired
         if(users::where('username', $data['username']) -> where('expired', '<', time()) -> exists()){
-            return response() -> json(['st' => false, 'msg' => 'Your id is expired. Please contact us']);
+            return response() -> json(['st' => false, 'msg' => 'Your id is expired.']);
         }
 
         // is ban
         if(users::where('username', $data['username']) -> where('st', 'ban') -> exists()){
-            return response() -> json(['st' => false, 'msg' => 'Your id is ban. Please contact us']);
+            return response() -> json(['st' => false, 'msg' => 'Your id is ban.']);
         }
 
         // browser_cache
@@ -67,7 +67,7 @@ class users_backend_account_controller extends Controller
             $req -> session() -> put('username', $data['username']);
             return response() -> json(['st' => true]);
         }else{
-            return response() -> json(['st' => false, 'msg' => 'You are alreday login. Please contact us']);
+            return response() -> json(['st' => false, 'msg' => 'You are alreday login.']);
 
         }
     }

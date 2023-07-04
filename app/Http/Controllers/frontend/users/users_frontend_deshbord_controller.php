@@ -30,7 +30,10 @@ class users_frontend_deshbord_controller extends Controller
         }
         $slider = slider::orderBy('id', 'DESC') -> get();
 
-        return view('users.pages.home.home') -> with(compact('products', 'slider', 'userData'));
+        // where 
+        $where = "movie";
+
+        return view('users.pages.home.home') -> with(compact('products', 'slider', 'userData', 'where'));
     }
 
     // users_livetv_controller
@@ -51,8 +54,10 @@ class users_frontend_deshbord_controller extends Controller
             }
         }
         $slider = slider::orderBy('id', 'DESC') -> get();
+        // where 
+        $where = "live";
 
-        return view('users.pages.home.home') -> with(compact('products', 'slider', 'userData'));
+        return view('users.pages.home.home') -> with(compact('products', 'slider', 'userData', 'where'));
     }
 
     // users_404_controller
