@@ -30,7 +30,7 @@
         max-width: 350px;
         min-height: 500px;
         margin: 80px auto;
-        padding: 30px 30px 30px 30px;
+        padding: 15px;
         /* padding-top: 0; */
         background: #ecf0f3;
         border-radius: 15px;
@@ -126,7 +126,7 @@
         white-space: nowrap;
         transform: translateX(0px);
         margin-bottom: 0 !important;
-        padding-bottom: 20px;
+        padding-bottom: 15px;
     }
 
     @media(max-width: 380px) {
