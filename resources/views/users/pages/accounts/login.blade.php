@@ -120,6 +120,9 @@
     }
 
     .news_wrapper{
+        width: 75%;
+        display: block;
+        margin: auto;
         overflow: hidden;
     }
     .news_wrapper .news{
