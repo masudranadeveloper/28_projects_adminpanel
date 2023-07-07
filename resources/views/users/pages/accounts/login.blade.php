@@ -28,10 +28,10 @@
 
     .wrapper {
         max-width: 350px;
-        min-height: 530px;
+        min-height: 500px;
         margin: 80px auto;
-        padding: 40px 30px 30px 30px;
-        padding-top: 0;
+        padding: 30px 30px 30px 30px;
+        /* padding-top: 0; */
         background: #ecf0f3;
         border-radius: 15px;
         /* box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff; */
@@ -120,19 +120,19 @@
     }
 
     .news_wrapper{
-        margin-top: 2rem;
-        margin-bottom: 2rem;
         overflow: hidden;
     }
     .news_wrapper .news{
         white-space: nowrap;
-        transform: translateX(0px)
+        transform: translateX(0px);
+        margin-bottom: 0 !important;
+        padding-bottom: 20px;
     }
 
     @media(max-width: 380px) {
         .wrapper {
             margin: 30px 20px;
-            padding: 40px 15px 15px 15px;
+            padding: 15px 15px 15px 15px;
         }
     }
     
@@ -189,7 +189,7 @@
             'login' : '{{ route('users_users_login_api') }}'
         }
     </script>
-    <script src="{{ asset('script\users\accounts.js') }}?v=1.1.3"></script>
+    <script src="{{ asset('script\users\accounts.js') }}?v=1.1.4"></script>
 
 </body>
 </html>

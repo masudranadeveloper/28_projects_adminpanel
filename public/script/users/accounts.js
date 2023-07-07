@@ -56,7 +56,7 @@ const animate_new = () => {
     var animation = `
         @keyframes dynamicAnimation {
             0% {
-                transform: translateX(200px);
+                transform: translateX(350px);
             }
             100% {
                 transform: translateX(-${elementWidth}px);
