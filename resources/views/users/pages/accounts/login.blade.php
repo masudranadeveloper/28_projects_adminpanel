@@ -27,7 +27,7 @@
     }
 
     .wrapper {
-        max-width: 350px;
+        max-width: 310px;
         min-height: 500px;
         margin: 80px auto;
         padding: 15px;
@@ -120,7 +120,6 @@
     }
 
     .news_wrapper{
-        width: 75%;
         display: block;
         margin: auto;
         overflow: hidden;
