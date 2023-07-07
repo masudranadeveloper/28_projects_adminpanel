@@ -46,3 +46,27 @@ const get_users_device_info = () => {
 }
 
 get_users_device_info();
+
+
+const animate_new = () => {
+    let speed = 0.045;
+    var elementWidth = Number($("p.news").width())+300;
+    let animation_time = speed*elementWidth;
+    
+    var animation = `
+        @keyframes dynamicAnimation {
+            0% {
+                transform: translateX(200px);
+            }
+            100% {
+                transform: translateX(-${elementWidth}px);
+            }
+        }
+    `;
+    $("<style>").html(animation).appendTo("head");
+
+    $("p.news").css("animation", "dynamicAnimation "+animation_time+"s linear infinite");
+    console.log(animation_time);
+}
+    
+animate_new();

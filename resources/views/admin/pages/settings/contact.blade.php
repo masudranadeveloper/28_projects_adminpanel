@@ -43,8 +43,16 @@
         <input type="file" class="form-control" name="img3" value="{{ $data['img3'] }}" />
     </div>
     <div class="form-group mt-3 mb-3">
+        <label>Background Img</label>
+        <input type="file" class="form-control" name="bg" value="{{ $data['bg'] }}" />
+    </div>
+    <div class="form-group mb-3">
         <label>Icons</label>
         <input type="file" class="form-control" name="logo" value="{{ $data['logo'] }}" />
+    </div>
+    <div class="form-group mb-3">
+        <label>Notice Text</label>
+        <input type="text" class="form-control" name="news" value="{{ $data['news'] }}" />
     </div>
 
     <input type="submit" value="CONFIRM" class="btn btn-success">

@@ -21,6 +21,8 @@ return new class extends Migration
             $table->text('links2') -> nullable();
             $table->text('img3') -> nullable();
             $table->text('links3') -> nullable();
+            $table->text('news') -> nullable();
+            $table->text('bg') -> nullable();
             $table->timestamps();
         });
     }

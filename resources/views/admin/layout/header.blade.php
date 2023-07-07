@@ -75,13 +75,13 @@
                                     <a style="{{Route::is('settings.admin_products_web') ? 'color: green !important' : ''}}" href="{{route('settings.admin_products_web')}}">PRODUCTS</a></a>
                                 </li>
                                 <li>
-                                    <a style="{{Route::is('settings.admin_contact_web') ? 'color: green !important' : ''}}" href="{{route('settings.admin_contact_web')}}">CONTACT</a></a>
-                                </li>
-                                <li>
                                     <a style="{{Route::is('settings.admin_live_tv_web') ? 'color: green !important' : ''}}" href="{{route('settings.admin_live_tv_web')}}">LIVE TV</a></a>
                                 </li>
                                 <li>
                                     <a style="{{Route::is('settings.urls_admin_urls_web') ? 'color: green !important' : ''}}" href="{{route('settings.urls_admin_urls_web')}}">URLS</a></a>
+                                </li>
+                                <li>
+                                    <a style="{{Route::is('settings.admin_contact_web') ? 'color: green !important' : ''}}" href="{{route('settings.admin_contact_web')}}">Login Page</a></a>
                                 </li>
                             </ul>
                         </li>

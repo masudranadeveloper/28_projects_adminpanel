@@ -22,17 +22,19 @@
     }
 
     body {
-        background: #ecf0f3;
+        background-image: url('{{asset('images/icons/'.$data['bg'])}}');
+        background-size:100% 100%;
     }
 
     .wrapper {
         max-width: 350px;
-        min-height: 500px;
+        min-height: 530px;
         margin: 80px auto;
         padding: 40px 30px 30px 30px;
-        background-color: #ecf0f3;
+        padding-top: 0;
+        background: #ecf0f3;
         border-radius: 15px;
-        box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+        /* box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff; */
     }
 
     .logo {
@@ -108,40 +110,68 @@
         color: #039BE5;
     }
 
+    .login_wrapper {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column
+    }
+
+    .news_wrapper{
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        overflow: hidden;
+    }
+    .news_wrapper .news{
+        white-space: nowrap;
+        transform: translateX(0px)
+    }
+
     @media(max-width: 380px) {
         .wrapper {
             margin: 30px 20px;
             padding: 40px 15px 15px 15px;
         }
     }
+    
     </style>
 </head>
 <body>
 
-    <div class="wrapper">
-        <div class="logo">
-            <img src="{{asset('images/contact/'.$data['logo'])}}" alt="">
-        </div>
-        <div class="text-center mt-4 name">
-            WELCOME
-        </div>
-        <form style="padding-top: 0 !important" class="p-3" id="submit_form">
+    <div class="login_wrapper">
+        <div class="wrapper">
 
-            <span id="error"></span>
-
-            <p style="text-align: center">Enter your username</p>
-            <div class="form-field d-flex align-items-center">
-                <span class="far fa-user"></span>
-                <input type="text" name="userName" id="login_username" placeholder="Username">
+            <div class="news_wrapper">
+                <p class="news">{{ $data['news'] }}</p>
             </div>
-            <button id="sub_btn" class="btn mt-3">Login</button>
-        </form>
-        <div class="text-center fs-6">
-            <a href="#" class="">Contact US</a>
-            <div class="icons mt-3" style="display: flex; align-items:center;justify-content:center; gap:15px">
-                <a href="{{$data['links1']}}"><img style="width: 3rem;height: 3rem;border-radius: 50%;" src="{{asset('images/contact/'.$data['img1'])}}" alt=""></a>
-                <a href="{{$data['links2']}}"><img style="width: 3rem;height: 3rem;border-radius: 50%;" src="{{asset('images/contact/'.$data['img2'])}}" alt=""></a>
-                <a href="{{$data['links3']}}"><img style="width: 3rem;height: 3rem;border-radius: 50%;" src="{{asset('images/contact/'.$data['img3'])}}" alt=""></a>
+
+            <div class="logo">
+                <img src="{{asset('images/contact/'.$data['logo'])}}" alt="">
+            </div>
+
+            <div class="text-center mt-4 name">
+                WELCOME
+            </div>
+            <form style="padding-top: 0 !important" class="p-3" id="submit_form">
+    
+                <span id="error"></span>
+    
+                <p style="text-align: center">Enter your username</p>
+                <div class="form-field d-flex align-items-center">
+                    <span class="far fa-user"></span>
+                    <input type="text" name="userName" id="login_username" placeholder="Username">
+                </div>
+                <button id="sub_btn" class="btn mt-3">Login</button>
+            </form>
+            <div class="text-center fs-6">
+                <a href="#" class="">Contact US</a>
+                <div class="icons mt-3" style="display: flex; align-items:center;justify-content:center; gap:15px">
+                    <a href="{{$data['links1']}}"><img style="width: 3rem;height: 3rem;border-radius: 50%;" src="{{asset('images/contact/'.$data['img1'])}}" alt=""></a>
+                    <a href="{{$data['links2']}}"><img style="width: 3rem;height: 3rem;border-radius: 50%;" src="{{asset('images/contact/'.$data['img2'])}}" alt=""></a>
+                    <a href="{{$data['links3']}}"><img style="width: 3rem;height: 3rem;border-radius: 50%;" src="{{asset('images/contact/'.$data['img3'])}}" alt=""></a>
+                </div>
             </div>
         </div>
     </div>

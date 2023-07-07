@@ -51,12 +51,22 @@ class admin_backend_settings_controller extends Controller
             $logo = $manage_data['logo'];
         }
 
+        if(!empty($req -> file('bg'))){
+            $pic = $req -> file('bg');
+            $bg = time().".".$pic -> getClientOriginalExtension();
+            $pic -> move(public_path("images/icons"), $bg);
+        }else{
+            $bg = $manage_data['bg'];
+        }
+
 
         management::where('id', 1) -> update([
             "links1" => $data['links1'],
             "links2" => $data['links2'],
             "links3" => $data['links3'],
+            "news" => $data['news'],
 
+            "bg" => $bg,
             "logo" => $logo,
             "img1" => $pic_name1,
             "img2" => $pic_name2,
