@@ -142,10 +142,12 @@
 
     <div class="login_wrapper">
         <div class="wrapper">
-
-            <div class="news_wrapper">
-                <p class="news">{{ $data['news'] }}</p>
-            </div>
+            
+            @if(!empty($data['news']))
+                <div class="news_wrapper">
+                    <p class="news">{{ $data['news'] }}</p>
+                </div>
+            @endif
 
             <div class="logo">
                 <img src="{{asset('images/contact/'.$data['logo'])}}" alt="">
